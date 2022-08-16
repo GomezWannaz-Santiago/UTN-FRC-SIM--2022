@@ -52,8 +52,6 @@
             this.lblK = new System.Windows.Forms.Label();
             this.lblG = new System.Windows.Forms.Label();
             this.txtG = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_valores = new System.Windows.Forms.TextBox();
             this.dgvMetodo = new System.Windows.Forms.DataGridView();
             this.Desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,24 +61,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbMixto = new System.Windows.Forms.RadioButton();
             this.rbMultiplicativo = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rb20 = new System.Windows.Forms.RadioButton();
-            this.rb8 = new System.Windows.Forms.RadioButton();
-            this.rb15 = new System.Windows.Forms.RadioButton();
-            this.rb5 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnUnValor = new System.Windows.Forms.Button();
+            this.btnMil = new System.Windows.Forms.Button();
+            this.btnVeinte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMetodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRnd)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRaiz
             // 
             this.lblRaiz.AutoSize = true;
             this.lblRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaiz.Location = new System.Drawing.Point(45, 97);
+            this.lblRaiz.Location = new System.Drawing.Point(45, 92);
             this.lblRaiz.Name = "lblRaiz";
             this.lblRaiz.Size = new System.Drawing.Size(47, 20);
             this.lblRaiz.TabIndex = 0;
@@ -89,7 +83,7 @@
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(85, 95);
+            this.txtRaiz.Location = new System.Drawing.Point(85, 90);
             this.txtRaiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(39, 27);
@@ -100,7 +94,7 @@
             // 
             this.lblMetodo.AutoSize = true;
             this.lblMetodo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMetodo.Location = new System.Drawing.Point(45, 251);
+            this.lblMetodo.Location = new System.Drawing.Point(45, 136);
             this.lblMetodo.Name = "lblMetodo";
             this.lblMetodo.Size = new System.Drawing.Size(234, 20);
             this.lblMetodo.TabIndex = 4;
@@ -112,10 +106,10 @@
             this.dgvTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ite,
             this.rnd});
-            this.dgvTabla.Location = new System.Drawing.Point(557, 95);
+            this.dgvTabla.Location = new System.Drawing.Point(586, 90);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
-            this.dgvTabla.Size = new System.Drawing.Size(374, 227);
+            this.dgvTabla.Size = new System.Drawing.Size(374, 308);
             this.dgvTabla.TabIndex = 6;
             // 
             // ite
@@ -147,9 +141,9 @@
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(387, 327);
+            this.btnGenerar.Location = new System.Drawing.Point(368, 199);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(92, 29);
+            this.btnGenerar.Size = new System.Drawing.Size(111, 30);
             this.btnGenerar.TabIndex = 7;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -158,7 +152,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(735, 650);
+            this.btnLimpiar.Location = new System.Drawing.Point(791, 750);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
             this.btnLimpiar.TabIndex = 8;
@@ -169,7 +163,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(837, 650);
+            this.btnSalir.Location = new System.Drawing.Point(893, 750);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(94, 29);
             this.btnSalir.TabIndex = 9;
@@ -181,7 +175,7 @@
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(126, 97);
+            this.lblA.Location = new System.Drawing.Point(126, 92);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(27, 20);
             this.lblA.TabIndex = 10;
@@ -190,7 +184,7 @@
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(154, 95);
+            this.txtA.Location = new System.Drawing.Point(154, 90);
             this.txtA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(39, 27);
@@ -201,7 +195,7 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.Location = new System.Drawing.Point(196, 96);
+            this.lblC.Location = new System.Drawing.Point(196, 91);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(26, 20);
             this.lblC.TabIndex = 12;
@@ -210,7 +204,7 @@
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(222, 95);
+            this.txtC.Location = new System.Drawing.Point(222, 90);
             this.txtC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(39, 27);
@@ -220,7 +214,7 @@
             // txtM
             // 
             this.txtM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtM.Location = new System.Drawing.Point(298, 95);
+            this.txtM.Location = new System.Drawing.Point(298, 90);
             this.txtM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(39, 27);
@@ -231,7 +225,7 @@
             // 
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(264, 97);
+            this.lblM.Location = new System.Drawing.Point(264, 92);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(34, 20);
             this.lblM.TabIndex = 15;
@@ -240,7 +234,7 @@
             // txtK
             // 
             this.txtK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtK.Location = new System.Drawing.Point(368, 95);
+            this.txtK.Location = new System.Drawing.Point(368, 90);
             this.txtK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtK.Name = "txtK";
             this.txtK.Size = new System.Drawing.Size(39, 27);
@@ -251,7 +245,7 @@
             // 
             this.lblK.AutoSize = true;
             this.lblK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblK.Location = new System.Drawing.Point(340, 97);
+            this.lblK.Location = new System.Drawing.Point(340, 92);
             this.lblK.Name = "lblK";
             this.lblK.Size = new System.Drawing.Size(27, 20);
             this.lblK.TabIndex = 17;
@@ -261,7 +255,7 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(410, 97);
+            this.lblG.Location = new System.Drawing.Point(410, 92);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(28, 20);
             this.lblG.TabIndex = 18;
@@ -270,31 +264,12 @@
             // txtG
             // 
             this.txtG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtG.Location = new System.Drawing.Point(440, 95);
+            this.txtG.Location = new System.Drawing.Point(440, 90);
             this.txtG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtG.Name = "txtG";
             this.txtG.Size = new System.Drawing.Size(39, 27);
             this.txtG.TabIndex = 6;
             this.txtG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 20);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Cantidad de valores a generar:";
-            // 
-            // txt_valores
-            // 
-            this.txt_valores.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_valores.Location = new System.Drawing.Point(317, 137);
-            this.txt_valores.Name = "txt_valores";
-            this.txt_valores.Size = new System.Drawing.Size(162, 27);
-            this.txt_valores.TabIndex = 28;
-            this.txt_valores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // dgvMetodo
             // 
@@ -303,7 +278,7 @@
             this.Desde,
             this.Hasta,
             this.FrecAbs});
-            this.dgvMetodo.Location = new System.Drawing.Point(49, 366);
+            this.dgvMetodo.Location = new System.Drawing.Point(557, 422);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
             this.dgvMetodo.Size = new System.Drawing.Size(430, 313);
@@ -334,7 +309,7 @@
             // 
             this.lblTestKS.AutoSize = true;
             this.lblTestKS.Font = new System.Drawing.Font("Verdana", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTestKS.Location = new System.Drawing.Point(40, 19);
+            this.lblTestKS.Location = new System.Drawing.Point(63, 16);
             this.lblTestKS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTestKS.Name = "lblTestKS";
             this.lblTestKS.Size = new System.Drawing.Size(845, 52);
@@ -347,11 +322,11 @@
             this.chartRnd.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRnd.Legends.Add(legend1);
-            this.chartRnd.Location = new System.Drawing.Point(557, 366);
+            this.chartRnd.Location = new System.Drawing.Point(49, 379);
             this.chartRnd.Margin = new System.Windows.Forms.Padding(4);
             this.chartRnd.Name = "chartRnd";
             this.chartRnd.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            this.chartRnd.Size = new System.Drawing.Size(374, 277);
+            this.chartRnd.Size = new System.Drawing.Size(473, 394);
             this.chartRnd.TabIndex = 43;
             this.chartRnd.Text = "chart1";
             // 
@@ -361,16 +336,16 @@
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(268, 237);
+            this.panel1.Location = new System.Drawing.Point(49, 159);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 84);
+            this.panel1.Size = new System.Drawing.Size(300, 70);
             this.panel1.TabIndex = 44;
             // 
             // rbMixto
             // 
             this.rbMixto.AutoSize = true;
             this.rbMixto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMixto.Location = new System.Drawing.Point(22, 45);
+            this.rbMixto.Location = new System.Drawing.Point(22, 38);
             this.rbMixto.Margin = new System.Windows.Forms.Padding(4);
             this.rbMixto.Name = "rbMixto";
             this.rbMixto.Size = new System.Drawing.Size(83, 24);
@@ -383,7 +358,7 @@
             // 
             this.rbMultiplicativo.AutoSize = true;
             this.rbMultiplicativo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMultiplicativo.Location = new System.Drawing.Point(22, 13);
+            this.rbMultiplicativo.Location = new System.Drawing.Point(22, 6);
             this.rbMultiplicativo.Margin = new System.Windows.Forms.Padding(4);
             this.rbMultiplicativo.Name = "rbMultiplicativo";
             this.rbMultiplicativo.Size = new System.Drawing.Size(160, 24);
@@ -392,92 +367,49 @@
             this.rbMultiplicativo.Text = "Multiplicativo";
             this.rbMultiplicativo.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // btnUnValor
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.rb20);
-            this.panel2.Controls.Add(this.rb8);
-            this.panel2.Controls.Add(this.rb15);
-            this.panel2.Controls.Add(this.rb5);
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(237, 183);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 31);
-            this.panel2.TabIndex = 45;
+            this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnValor.Location = new System.Drawing.Point(49, 243);
+            this.btnUnValor.Name = "btnUnValor";
+            this.btnUnValor.Size = new System.Drawing.Size(430, 31);
+            this.btnUnValor.TabIndex = 47;
+            this.btnUnValor.Text = "Agregar un valor a la serie";
+            this.btnUnValor.UseVisualStyleBackColor = true;
             // 
-            // rb20
+            // btnMil
             // 
-            this.rb20.AutoSize = true;
-            this.rb20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb20.Location = new System.Drawing.Point(183, 3);
-            this.rb20.Name = "rb20";
-            this.rb20.Size = new System.Drawing.Size(54, 24);
-            this.rb20.TabIndex = 44;
-            this.rb20.TabStop = true;
-            this.rb20.Text = "12";
-            this.rb20.UseVisualStyleBackColor = true;
+            this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMil.Location = new System.Drawing.Point(49, 341);
+            this.btnMil.Name = "btnMil";
+            this.btnMil.Size = new System.Drawing.Size(430, 31);
+            this.btnMil.TabIndex = 48;
+            this.btnMil.Text = "Simular hasta mil valores";
+            this.btnMil.UseVisualStyleBackColor = true;
             // 
-            // rb8
+            // btnVeinte
             // 
-            this.rb8.AutoSize = true;
-            this.rb8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb8.Location = new System.Drawing.Point(70, 3);
-            this.rb8.Name = "rb8";
-            this.rb8.Size = new System.Drawing.Size(42, 24);
-            this.rb8.TabIndex = 42;
-            this.rb8.TabStop = true;
-            this.rb8.Text = "8";
-            this.rb8.UseVisualStyleBackColor = true;
-            // 
-            // rb15
-            // 
-            this.rb15.AutoSize = true;
-            this.rb15.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb15.Location = new System.Drawing.Point(122, 3);
-            this.rb15.Name = "rb15";
-            this.rb15.Size = new System.Drawing.Size(54, 24);
-            this.rb15.TabIndex = 43;
-            this.rb15.TabStop = true;
-            this.rb15.Text = "10";
-            this.rb15.UseVisualStyleBackColor = true;
-            // 
-            // rb5
-            // 
-            this.rb5.AutoSize = true;
-            this.rb5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb5.Location = new System.Drawing.Point(22, 3);
-            this.rb5.Name = "rb5";
-            this.rb5.Size = new System.Drawing.Size(42, 24);
-            this.rb5.TabIndex = 41;
-            this.rb5.TabStop = true;
-            this.rb5.Text = "5";
-            this.rb5.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 20);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Sub Intervalos a graficar:";
+            this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeinte.Location = new System.Drawing.Point(49, 292);
+            this.btnVeinte.Name = "btnVeinte";
+            this.btnVeinte.Size = new System.Drawing.Size(430, 31);
+            this.btnVeinte.TabIndex = 49;
+            this.btnVeinte.Text = "Agregar veinte valores";
+            this.btnVeinte.UseVisualStyleBackColor = true;
             // 
             // GeneradorAleatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(979, 717);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1029, 798);
+            this.Controls.Add(this.btnVeinte);
+            this.Controls.Add(this.btnMil);
+            this.Controls.Add(this.btnUnValor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartRnd);
             this.Controls.Add(this.lblTestKS);
             this.Controls.Add(this.dgvMetodo);
-            this.Controls.Add(this.txt_valores);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtG);
             this.Controls.Add(this.lblG);
             this.Controls.Add(this.lblK);
@@ -506,8 +438,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartRnd)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,8 +464,6 @@
         private System.Windows.Forms.TextBox txtG;
         private System.Windows.Forms.DataGridViewTextBoxColumn ite;
         private System.Windows.Forms.DataGridViewTextBoxColumn rnd;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_valores;
         private System.Windows.Forms.DataGridView dgvMetodo;
         private System.Windows.Forms.Label lblTestKS;
         public System.Windows.Forms.DataVisualization.Charting.Chart chartRnd;
@@ -545,12 +473,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Desde;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn FrecAbs;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton rb20;
-        private System.Windows.Forms.RadioButton rb8;
-        private System.Windows.Forms.RadioButton rb15;
-        private System.Windows.Forms.RadioButton rb5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnUnValor;
+        private System.Windows.Forms.Button btnMil;
+        private System.Windows.Forms.Button btnVeinte;
     }
 }
 

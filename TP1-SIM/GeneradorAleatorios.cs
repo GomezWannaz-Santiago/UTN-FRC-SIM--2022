@@ -24,6 +24,7 @@ namespace TP1_SIM
             InitializeComponent();            
         }
         // Verificamos que lo ingresado en el txt sea un numero
+        //creo que lo de validar que sea número ya no hacia falta por una funcion que habia puesto yo para que no acepte letras (KeyPress) (mari)
         private int validarVariables(string variable)
         {
             if (int.TryParse(variable, out int resultado)) {
@@ -58,12 +59,13 @@ namespace TP1_SIM
                 }
             }
 
-            if (txt_valores.Text == "")
-            {
-                MessageBox.Show("DEBE COMPLETAR EL CAMPO CANTIDAD DE VALORES A GENERAR");
-                return;
+            // AL SER SOLO 20 VALORES AHORA YA ESTÁ DE MÁS LA VALIDACIÓN (mari)
+            //if (txt_valores.Text == "")
+            //{
+            //    MessageBox.Show("DEBE COMPLETAR EL CAMPO CANTIDAD DE VALORES A GENERAR");
+            //    return;
 
-            }
+            //}
             if (txtK.Text == "" && txtA.Text == "")
             {
                 MessageBox.Show("DEBE COMPLETAR EL CAMPO DE LOS VALORES A O K OBLIGATORIAMENTE");
@@ -114,41 +116,41 @@ namespace TP1_SIM
 
             }
 
-           //esto de las banderas podría borrarse porque ya no lo usamos
+            //esto de las banderas podría borrarse porque ya no lo usamos (mari)
             if (bandOk == false)
             {
                 bandOk = true;
             }
         }
 
-      
-        private int cantidadIntervalos()
-        {
-            int num;
+        // ya no va (mari)
+        //private int cantidadIntervalos()
+        //{
+        //    int num;
 
-            if (rb5.Checked)
-            {
-                num = 5;
-                
-            }
-            else if (rb8.Checked)
-            {
-                num = 8;
-               
-            }
-            else if (rb15.Checked)
-            {
-                num = 10;
-                
-            }
-            else
-            {
-                num = 12;
-                
-            }
+        //    if (rb5.Checked)
+        //    {
+        //        num = 5;
 
-            return num;
-        }
+        //    }
+        //    else if (rb8.Checked)
+        //    {
+        //        num = 8;
+
+        //    }
+        //    else if (rb15.Checked)
+        //    {
+        //        num = 10;
+
+        //    }
+        //    else
+        //    {
+        //        num = 12;
+
+        //    }
+
+        //    return num;
+        //}
 
         private List<int> generarMixto()
         {
@@ -301,7 +303,9 @@ namespace TP1_SIM
 
         private double[] validarMetodo()
         {
-            double[] numeros = new double[int.Parse(txt_valores.Text)];
+            //double[] numeros = new double[int.Parse(txt_valores.Text)];
+            // cambie por 20 igual ver si es necesario pasarlo a double o poner 20,0000 (mari)
+            double[] numeros = new double[20];
             if (bandOk == true)
             {
 
@@ -352,7 +356,9 @@ namespace TP1_SIM
             chartRnd.Series.Clear();
 
             double[] elem = validarMetodo();
-            int num = cantidadIntervalos();
+            // int num = cantidadIntervalos();
+            // pide 10 intervalos ahora (mari)
+            int num = 10;
             double[] intervalos = generarIntervalos(num);            
             CargarFrecuencia(elem, intervalos);
             
@@ -371,7 +377,9 @@ namespace TP1_SIM
             double axc;
             double resto = 0;
             double rnd;
-            int vueltas = Convert.ToInt32(txt_valores.Text);
+            // int vueltas = Convert.ToInt32(txt_valores.Text);
+            // Acá agregue lo de los 20 valores a generar y borré la selección del usuario (mari)
+            int vueltas = 20 ;
             int inicio = 0;
             
 
@@ -481,7 +489,6 @@ namespace TP1_SIM
             txtG.Clear();
             txtK.Clear();
             txtM.Clear();
-            txt_valores.Clear();
             rbMixto.Checked = false;
             rbMultiplicativo.Checked = false;
             dgvTabla.Rows.Clear();
@@ -500,7 +507,6 @@ namespace TP1_SIM
             txtG.Clear();
             txtK.Clear();
             txtM.Clear();
-            txt_valores.Clear();
             rbMixto.Checked = false;
             rbMultiplicativo.Checked = false;
             dgvTabla.Rows.Clear();
@@ -596,7 +602,7 @@ namespace TP1_SIM
 
         }
 
-        // los métodos "KeyPress" sirven solo para que el usuario no ingrese letras o simbolos
+        // los métodos "KeyPress" sirven para que el usuario no ingrese letras o simbolos
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&

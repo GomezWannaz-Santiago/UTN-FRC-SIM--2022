@@ -223,3 +223,27 @@ D:\Escritorio\Cosas de la facu\4- cuarto\SIM\TP1 - listo\TP1-SIM-master\TP1-SIM\
 D:\Escritorio\Cosas de la facu\4- cuarto\SIM\TP1 - listo\TP1-SIM-master\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
 D:\Escritorio\Cosas de la facu\4- cuarto\SIM\TP1 - listo\TP1-SIM-master\TP1-SIM\obj\Debug\TP1-SIM.exe
 D:\Escritorio\Cosas de la facu\4- cuarto\SIM\TP1 - listo\TP1-SIM-master\TP1-SIM\obj\Debug\TP1-SIM.pdb
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.config
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.manifest
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.application
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.pdb
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.dll
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.dll
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.pdb
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.xml
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.pdb
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.xml
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.AssemblyReference.cache
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.GeneradorAleatorios.resources
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestKS.resources
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Menu.resources
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Properties.Resources.resources
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestChiCuadrado.resources
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.GenerateResource.cache
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CoreCompileInputs.cache
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe.manifest
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.application
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe
+C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.pdb
