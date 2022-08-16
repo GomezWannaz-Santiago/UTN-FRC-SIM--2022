@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TP1-SIM.exe" size="1267184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TP1-SIM.exe" size="1269232">
       <assemblyIdentity name="TP1-SIM" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sqfCYo7uBUl71jBIQQ1qQ3qna2dyD9o88hjhbIXssTw=</dsig:DigestValue>
+        <dsig:DigestValue>EQr57jv7J0n2Glp1W2zPnbpyxhdLgGnsYrgCw1DsGZM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

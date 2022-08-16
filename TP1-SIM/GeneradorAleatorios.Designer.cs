@@ -59,6 +59,7 @@
             this.lblTestKS = new System.Windows.Forms.Label();
             this.chartRnd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbAditivo = new System.Windows.Forms.RadioButton();
             this.rbMixto = new System.Windows.Forms.RadioButton();
             this.rbMultiplicativo = new System.Windows.Forms.RadioButton();
             this.btnUnValor = new System.Windows.Forms.Button();
@@ -141,7 +142,7 @@
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(368, 199);
+            this.btnGenerar.Location = new System.Drawing.Point(368, 222);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(111, 30);
             this.btnGenerar.TabIndex = 7;
@@ -152,7 +153,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(791, 750);
+            this.btnLimpiar.Location = new System.Drawing.Point(791, 779);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
             this.btnLimpiar.TabIndex = 8;
@@ -163,7 +164,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(893, 750);
+            this.btnSalir.Location = new System.Drawing.Point(893, 779);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(94, 29);
             this.btnSalir.TabIndex = 9;
@@ -281,7 +282,7 @@
             this.dgvMetodo.Location = new System.Drawing.Point(557, 422);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
-            this.dgvMetodo.Size = new System.Drawing.Size(430, 313);
+            this.dgvMetodo.Size = new System.Drawing.Size(430, 351);
             this.dgvMetodo.TabIndex = 29;
             // 
             // Desde
@@ -322,7 +323,7 @@
             this.chartRnd.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRnd.Legends.Add(legend1);
-            this.chartRnd.Location = new System.Drawing.Point(49, 379);
+            this.chartRnd.Location = new System.Drawing.Point(48, 413);
             this.chartRnd.Margin = new System.Windows.Forms.Padding(4);
             this.chartRnd.Name = "chartRnd";
             this.chartRnd.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
@@ -333,19 +334,33 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.rbAditivo);
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(49, 159);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 70);
+            this.panel1.Size = new System.Drawing.Size(300, 93);
             this.panel1.TabIndex = 44;
+            // 
+            // rbAditivo
+            // 
+            this.rbAditivo.AutoSize = true;
+            this.rbAditivo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAditivo.Location = new System.Drawing.Point(22, 64);
+            this.rbAditivo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbAditivo.Name = "rbAditivo";
+            this.rbAditivo.Size = new System.Drawing.Size(76, 20);
+            this.rbAditivo.TabIndex = 47;
+            this.rbAditivo.TabStop = true;
+            this.rbAditivo.Text = "Aditivo";
+            this.rbAditivo.UseVisualStyleBackColor = true;
             // 
             // rbMixto
             // 
             this.rbMixto.AutoSize = true;
             this.rbMixto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMixto.Location = new System.Drawing.Point(22, 38);
+            this.rbMixto.Location = new System.Drawing.Point(22, 35);
             this.rbMixto.Margin = new System.Windows.Forms.Padding(4);
             this.rbMixto.Name = "rbMixto";
             this.rbMixto.Size = new System.Drawing.Size(65, 20);
@@ -371,7 +386,7 @@
             // 
             this.btnUnValor.Enabled = false;
             this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnValor.Location = new System.Drawing.Point(49, 243);
+            this.btnUnValor.Location = new System.Drawing.Point(49, 271);
             this.btnUnValor.Name = "btnUnValor";
             this.btnUnValor.Size = new System.Drawing.Size(430, 31);
             this.btnUnValor.TabIndex = 47;
@@ -382,7 +397,7 @@
             // 
             this.btnMil.Enabled = false;
             this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMil.Location = new System.Drawing.Point(49, 341);
+            this.btnMil.Location = new System.Drawing.Point(49, 369);
             this.btnMil.Name = "btnMil";
             this.btnMil.Size = new System.Drawing.Size(430, 31);
             this.btnMil.TabIndex = 48;
@@ -393,7 +408,7 @@
             // 
             this.btnVeinte.Enabled = false;
             this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeinte.Location = new System.Drawing.Point(49, 292);
+            this.btnVeinte.Location = new System.Drawing.Point(49, 320);
             this.btnVeinte.Name = "btnVeinte";
             this.btnVeinte.Size = new System.Drawing.Size(430, 31);
             this.btnVeinte.TabIndex = 49;
@@ -405,7 +420,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1029, 798);
+            this.ClientSize = new System.Drawing.Size(1029, 820);
             this.Controls.Add(this.btnVeinte);
             this.Controls.Add(this.btnMil);
             this.Controls.Add(this.btnUnValor);
@@ -479,6 +494,7 @@
         private System.Windows.Forms.Button btnUnValor;
         private System.Windows.Forms.Button btnMil;
         private System.Windows.Forms.Button btnVeinte;
+        private System.Windows.Forms.RadioButton rbAditivo;
     }
 }
 
