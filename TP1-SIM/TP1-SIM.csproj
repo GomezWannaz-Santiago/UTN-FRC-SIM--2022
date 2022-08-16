@@ -162,5 +162,11 @@
   <ItemGroup>
     <None Include="Resources\portadas-twitter-2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sistema-1200x480.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1553065_blue_letter_s_alphabet_letters_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
