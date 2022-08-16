@@ -41,6 +41,21 @@ namespace TP1_SIM
                 throw new Exception("La cantidad de intervalos debe ser un entero");
             }
 
+            if (chkMetodoMixto.Checked)
+            {
+                if (string.IsNullOrEmpty(txtA.Text) || string.IsNullOrEmpty(txtC.Text) || string.IsNullOrEmpty(txtSemilla.Text))
+                    throw new Exception("Complete todos los campos referentes al método mixto por favor");
+                else if (!int.TryParse(txtA.Text, out int a))
+                    throw new Exception("El campo A debe ser un número");
+                else if (a % 2 == 0 || a % 3 == 0 || a % 5 == 0)
+                    throw new Exception("En este método A no puede ser par ni divisible por 3 ni por 5. ");
+
+
+
+            }
+
+
+
         }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
@@ -48,12 +63,13 @@ namespace TP1_SIM
             {
                 dgvFrecuencias.DataSource = null;
                 dgvSerie.DataSource = null;
-                ValidarIngreso();                                
-
+                LimpiarTablas();
+                ValidarIngreso();
+                                
                 double[] elem;
                 if (chkMetodoMixto.Checked)
                 {
-                    elem = GenerarRNDsConMetodoMixto(int.Parse(mstxtMuestra.Text));
+                    elem = GenerarRNDsConMetodoMixto(int.Parse(mstxtMuestra.Text), int.Parse(txtSemilla.Text),int.Parse(txtA.Text), int.Parse(txtC.Text));                    
                 }
                 else
                 {
@@ -78,11 +94,38 @@ namespace TP1_SIM
             }
         }
 
-        public double[] GenerarRNDsConMetodoMixto(int n)
+        public double[] GenerarRNDsConMetodoMixto(int cantidadAGenerar, int x0, int a, int c)
         {
-            return GenerarRNDsConLenguaje(n);
+            int m = int.MaxValue;
+            double[] numeros = new double[cantidadAGenerar];
+            numeros[0] = (a * x0 + c) % m;
+            double xAnterior = numeros[0];
+            double xActual;
+            for(int i = 1; i < cantidadAGenerar; i++)
+            {
+                xActual = (a * xAnterior + c) % m;
+                numeros[i] = xActual / m;
+                xAnterior = xActual;
+            }
+
+            return numeros;
         }
 
+        private double[] GenerarRNDsConLenguaje(int n)
+        {
+            Random rnd = new Random();
+            double[] numeros = new double[n];
+            Console.WriteLine("Generando " + n + " numeros aleatorios");
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                numeros[i] = Math.Round(rnd.NextDouble(), 4);
+                Console.WriteLine(numeros[i]);
+                dgvSerie.Rows.Add(numeros[i]);
+            }
+
+            return numeros;
+        }
 
         private string ValidarHipotesis(string valorCalculado, int cantidadIntervalos  )
         {
@@ -119,10 +162,6 @@ namespace TP1_SIM
             }
             return msg;
         }
-
-
-        
-
         public double[] GenerarIntervalos(int cantidadIntervalos)
         {            
             double[] intervalos = new double[cantidadIntervalos];
@@ -141,9 +180,7 @@ namespace TP1_SIM
             }
             return intervalos;           
         }
-        
-
-        
+       
         private void CargarFrecuencias(double[] numeros , double[] intervalos)
         {
             int[] frecuencias = new int[intervalos.Length];
@@ -202,37 +239,25 @@ namespace TP1_SIM
             }     
         }
 
-        private double[]  GenerarRNDsConLenguaje(int n)
-        {
-            Random rnd = new Random();
-            double[] numeros = new double[n];
-            Console.WriteLine("Generando "+ n + " numeros aleatorios");
+ 
 
-            for (int i = 0; i < numeros.Length; i++)
-            {
-                numeros[i] = Math.Round(rnd.NextDouble(), 4);
-                Console.WriteLine(numeros[i]);
-                dgvSerie.Rows.Add(numeros[i]);
-            }
-
-            return numeros;
-        }        
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
+        
 
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             mstxtMuestra.Clear();
             cmbIntervalos.SelectedIndex = -1;
-            dgvSerie.Rows.Clear();
-            dgvFrecuencias.Rows.Clear();
-            chart1.Series.Clear();
             txt_calculado.Clear();
             txt_gradoslibertad.Clear();
+
+            LimpiarTablas();
+        }
+
+        private void LimpiarTablas()
+        {                        
+            dgvSerie.Rows.Clear();
+            dgvFrecuencias.Rows.Clear();
+            chart1.Series.Clear();            
         }
 
         private void TestChiCuadrado_Load(object sender, EventArgs e)
@@ -256,5 +281,18 @@ namespace TP1_SIM
                 e.Handled = true;
             }
         }
+
+        private void chkMetodoMixto_Click(object sender, EventArgs e)
+        {
+            txtA.Enabled = !txtA.Enabled;
+            txtC.Enabled = !txtC.Enabled;
+            txtSemilla.Enabled = !txtSemilla.Enabled;            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }

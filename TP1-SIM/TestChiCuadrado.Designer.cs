@@ -55,6 +55,12 @@
             this.lblTestKS = new System.Windows.Forms.Label();
             this.chkMetodoMixto = new System.Windows.Forms.CheckBox();
             this.cmbIntervalos = new System.Windows.Forms.ComboBox();
+            this.txtSemilla = new System.Windows.Forms.TextBox();
+            this.txtC = new System.Windows.Forms.TextBox();
+            this.txtA = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrecuencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -64,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 98);
+            this.label1.Location = new System.Drawing.Point(30, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 16);
             this.label1.TabIndex = 0;
@@ -73,7 +79,7 @@
             // mstxtMuestra
             // 
             this.mstxtMuestra.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mstxtMuestra.Location = new System.Drawing.Point(248, 94);
+            this.mstxtMuestra.Location = new System.Drawing.Point(248, 81);
             this.mstxtMuestra.Name = "mstxtMuestra";
             this.mstxtMuestra.Size = new System.Drawing.Size(92, 23);
             this.mstxtMuestra.TabIndex = 1;
@@ -84,7 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 132);
+            this.label2.Location = new System.Drawing.Point(86, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 16);
             this.label2.TabIndex = 2;
@@ -103,7 +109,7 @@
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(449, 170);
+            this.btnGenerar.Location = new System.Drawing.Point(413, 213);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(86, 25);
             this.btnGenerar.TabIndex = 11;
@@ -116,10 +122,10 @@
             this.dgvSerie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSerie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serie});
-            this.dgvSerie.Location = new System.Drawing.Point(33, 208);
+            this.dgvSerie.Location = new System.Drawing.Point(33, 244);
             this.dgvSerie.Name = "dgvSerie";
             this.dgvSerie.RowHeadersWidth = 51;
-            this.dgvSerie.Size = new System.Drawing.Size(124, 297);
+            this.dgvSerie.Size = new System.Drawing.Size(124, 261);
             this.dgvSerie.TabIndex = 12;
             // 
             // serie
@@ -139,10 +145,10 @@
             this.fe,
             this.c,
             this.ac});
-            this.dgvFrecuencias.Location = new System.Drawing.Point(163, 208);
+            this.dgvFrecuencias.Location = new System.Drawing.Point(163, 244);
             this.dgvFrecuencias.Name = "dgvFrecuencias";
             this.dgvFrecuencias.RowHeadersWidth = 51;
-            this.dgvFrecuencias.Size = new System.Drawing.Size(453, 297);
+            this.dgvFrecuencias.Size = new System.Drawing.Size(453, 261);
             this.dgvFrecuencias.TabIndex = 13;
             // 
             // desde
@@ -203,7 +209,7 @@
             // btn_limpiar
             // 
             this.btn_limpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpiar.Location = new System.Drawing.Point(541, 170);
+            this.btn_limpiar.Location = new System.Drawing.Point(517, 213);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(75, 25);
             this.btn_limpiar.TabIndex = 16;
@@ -273,12 +279,13 @@
             // chkMetodoMixto
             // 
             this.chkMetodoMixto.AutoSize = true;
-            this.chkMetodoMixto.Location = new System.Drawing.Point(248, 160);
+            this.chkMetodoMixto.Location = new System.Drawing.Point(89, 145);
             this.chkMetodoMixto.Name = "chkMetodoMixto";
             this.chkMetodoMixto.Size = new System.Drawing.Size(115, 17);
             this.chkMetodoMixto.TabIndex = 44;
             this.chkMetodoMixto.Text = "Usar Método Mixto";
             this.chkMetodoMixto.UseVisualStyleBackColor = true;
+            this.chkMetodoMixto.Click += new System.EventHandler(this.chkMetodoMixto_Click);
             // 
             // cmbIntervalos
             // 
@@ -289,10 +296,67 @@
             "8",
             "10",
             "12"});
-            this.cmbIntervalos.Location = new System.Drawing.Point(248, 133);
+            this.cmbIntervalos.Location = new System.Drawing.Point(248, 113);
             this.cmbIntervalos.Name = "cmbIntervalos";
             this.cmbIntervalos.Size = new System.Drawing.Size(121, 21);
             this.cmbIntervalos.TabIndex = 46;
+            // 
+            // txtSemilla
+            // 
+            this.txtSemilla.Enabled = false;
+            this.txtSemilla.Location = new System.Drawing.Point(280, 144);
+            this.txtSemilla.Name = "txtSemilla";
+            this.txtSemilla.Size = new System.Drawing.Size(38, 20);
+            this.txtSemilla.TabIndex = 47;
+            this.txtSemilla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtN_KeyPress);
+            // 
+            // txtC
+            // 
+            this.txtC.Enabled = false;
+            this.txtC.Location = new System.Drawing.Point(280, 194);
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(38, 20);
+            this.txtC.TabIndex = 48;
+            this.txtC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtN_KeyPress);
+            // 
+            // txtA
+            // 
+            this.txtA.Enabled = false;
+            this.txtA.Location = new System.Drawing.Point(280, 169);
+            this.txtA.Name = "txtA";
+            this.txtA.Size = new System.Drawing.Size(38, 20);
+            this.txtA.TabIndex = 50;
+            this.txtA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtN_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(247, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 16);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "X0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(257, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 16);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "a";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(258, 194);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(16, 16);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "c";
             // 
             // TestChiCuadrado
             // 
@@ -300,6 +364,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1131, 562);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtA);
+            this.Controls.Add(this.txtC);
+            this.Controls.Add(this.txtSemilla);
             this.Controls.Add(this.cmbIntervalos);
             this.Controls.Add(this.chkMetodoMixto);
             this.Controls.Add(this.lblTestKS);
@@ -356,5 +426,11 @@
         private System.Windows.Forms.Label lblTestKS;
         private System.Windows.Forms.CheckBox chkMetodoMixto;
         private System.Windows.Forms.ComboBox cmbIntervalos;
+        private System.Windows.Forms.TextBox txtSemilla;
+        private System.Windows.Forms.TextBox txtC;
+        private System.Windows.Forms.TextBox txtA;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
     }
 }
