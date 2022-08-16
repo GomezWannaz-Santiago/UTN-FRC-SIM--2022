@@ -14,7 +14,7 @@ namespace TP1_SIM
     public partial class GeneradorAleatorios : Form
     {
         //COMENTARIO
-        private bool bandOk = false;
+        private bool bandOk = true;
         private bool proximo = false;
         private bool proximo20 = false;
         private bool final = false;
@@ -39,7 +39,7 @@ namespace TP1_SIM
             return -1;
         }
      
-
+        //mari para validar que ya esta el generar
         private void controlarVariables()
         {
 
@@ -154,15 +154,110 @@ namespace TP1_SIM
 
         private List<int> generarMixto()
         {
-            if (rbMixto.Checked && txtC.Text != "")
+            if (rbMixto.Checked)
             {
-                int x = int.Parse(txtRaiz.Text);
-                int c = int.Parse(txtC.Text);
-
-                int a = 0;
-                int m = 0;
+                int x = 37;
+                int c = 7;
+                int a = 19;
+                int m = 53;
                 int k = 0;
                 int g = 0;
+                
+                if (txtC.Text != "")
+                {
+                    x = int.Parse(txtRaiz.Text);
+                    c = int.Parse(txtC.Text);
+
+                    a = 0;
+                    m = 0;
+                    k = 0;
+                    g = 0;
+
+
+                    if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
+                    {
+                        controlarVariables();
+                        return null;
+                    }
+                    else
+                    {
+                        if (txtK.Text != "" && txtA.Text != "")
+                        {
+                            a = int.Parse(txtA.Text);
+                            k = int.Parse(txtK.Text);
+                        }
+                        else if (txtK.Text == "")
+                        {
+                            a = int.Parse(txtA.Text);
+
+                        }
+                        else if (txtA.Text == "")
+                        {
+                            k = int.Parse(txtK.Text);
+                            a = 1 + 4 * k;
+                            //
+                            txtA.Text = a.ToString();
+
+                        }
+
+
+                        if (txtM.Text != "" && txtG.Text != "")
+                        {
+                            g = int.Parse(txtG.Text);
+                            m = int.Parse(txtM.Text);
+                        }
+                        else if (txtG.Text == "")
+                        {
+                            m = int.Parse(txtM.Text);
+
+                        }
+
+                        else if (txtM.Text == "")
+                        {
+                            g = int.Parse(txtG.Text);
+                            m = (int)Math.Pow(2, g);
+                            //
+                            txtM.Text = m.ToString();
+                        }
+                    }
+                }
+
+                List<int> elementos = new List<int>();
+                elementos.Add(x);
+                elementos.Add(a);
+                elementos.Add(c);
+                elementos.Add(m);
+                elementos.Add(k);
+                elementos.Add(g);
+
+                return elementos;
+
+            }
+            else
+            {
+                return null;
+            }
+
+            
+        }
+        private List<int> generarMultiplicativo()
+        {
+            int x = 37;
+            int c = 0;
+            int a = 19;
+            int m = 53;
+            int k = 0;
+            int g = 0;
+            
+            if (txtRaiz.Text != "" && txtA.Text != "" && txtM.Text != "")
+            {
+                x = int.Parse(txtRaiz.Text);
+
+                c = 0;
+                a = 0;
+                m = 0;
+                k = 0;
+                g = 0;
 
 
                 if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
@@ -185,10 +280,9 @@ namespace TP1_SIM
                     else if (txtA.Text == "")
                     {
                         k = int.Parse(txtK.Text);
-                        a = 1 + 4 * k;
-                        //
+                        a = 3 + 8 * k;
+
                         txtA.Text = a.ToString();
-                        
                     }
 
 
@@ -200,104 +294,27 @@ namespace TP1_SIM
                     else if (txtG.Text == "")
                     {
                         m = int.Parse(txtM.Text);
-                        
                     }
 
                     else if (txtM.Text == "")
                     {
                         g = int.Parse(txtG.Text);
                         m = (int)Math.Pow(2, g);
-                        //
                         txtM.Text = m.ToString();
                     }
-
-
-
-                    List<int> elementos = new List<int>();
-                    elementos.Add(x);
-                    elementos.Add(a);
-                    elementos.Add(c);
-                    elementos.Add(m);
-                    elementos.Add(k);
-                    elementos.Add(g);
-
-                    return elementos;
                 }
             }
-            else
-            {
-                return null;
-            }
-
             
-        }
-        private List<int> generarMultiplicativo()
-        {
+            List<int> elementos = new List<int>();
+            elementos.Add(x);
+            elementos.Add(a);
+            elementos.Add(c);
+            elementos.Add(m);
+            elementos.Add(k);
+            elementos.Add(g);
 
-            int x = int.Parse(txtRaiz.Text);
+            return elementos;
 
-            int c = 0;
-            int a = 0;
-            int m = 0;
-            int k = 0;
-            int g = 0;
-
-
-            if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
-            {
-                controlarVariables();
-                return null;
-            }
-            else
-            {
-                if (txtK.Text != "" && txtA.Text != "")
-                {
-                    a = int.Parse(txtA.Text);
-                    k = int.Parse(txtK.Text);
-                }
-                else if (txtK.Text == "")
-                {
-                    a = int.Parse(txtA.Text);
-
-                }
-                else if (txtA.Text == "")
-                {
-                    k = int.Parse(txtK.Text);
-                    a = 3 + 8 * k;
-                    
-                    txtA.Text = a.ToString();
-                }
-
-
-                if (txtM.Text != "" && txtG.Text != "")
-                {
-                    g = int.Parse(txtG.Text);
-                    m = int.Parse(txtM.Text);
-                }
-                else if (txtG.Text == "")
-                {
-                    m = int.Parse(txtM.Text);
-                }
-
-                else if (txtM.Text == "")
-                {
-                    g = int.Parse(txtG.Text);
-                    m = (int)Math.Pow(2, g);
-                    txtM.Text = m.ToString();
-                }
-
-
-
-                List<int> elementos = new List<int>();
-                elementos.Add(x);
-                elementos.Add(a);
-                elementos.Add(c);
-                elementos.Add(m);
-                elementos.Add(k);
-                elementos.Add(g);
-
-                return elementos;
-            }
 
         }
 
@@ -310,7 +327,6 @@ namespace TP1_SIM
             {
 
                 if (rbMixto.Checked)
-
                 {
                     var elementos = generarMixto();
                     if (elementos != null)
@@ -321,27 +337,36 @@ namespace TP1_SIM
 
                 else if (rbMultiplicativo.Checked)
                 {
-                    int x = int.Parse(txtRaiz.Text);
-                    if (x % 2 == 0)
+                    if (txtRaiz.Text != "")
                     {
-                        MessageBox.Show("La raiz debe ser un numero Impar");                        
-                        
+                        int x = int.Parse(txtRaiz.Text);
+                        if (x % 2 == 0)
+                        {
+                            Exception raizPar = new Exception(message: "La raiz debe ser un numero Impar");
+                            throw raizPar;
+                        }
+                        else
+                        {
+                            var elementos = generarMultiplicativo();
+                            if (elementos != null)
+                            {
+                                numeros = cargarTabla(elementos);
+                            }
+                        }
                     }
                     else
                     {
                         var elementos = generarMultiplicativo();
                         if (elementos != null)
                         {
-                             numeros = cargarTabla(elementos);
+                            numeros = cargarTabla(elementos);
                         }
-                        
-
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor seleccione un método ");
-
+                    Exception raizPar = new Exception(message: "Por favor seleccione un método ");
+                    throw raizPar;
                 }
 
             }
@@ -352,15 +377,26 @@ namespace TP1_SIM
         {
             dgvTabla.Rows.Clear();
             dgvMetodo.Rows.Clear();
-            controlarVariables();
+            //controlarVariables();
             chartRnd.Series.Clear();
 
-            double[] elem = validarMetodo();
-            // int num = cantidadIntervalos();
-            // pide 10 intervalos ahora (mari)
-            int num = 10;
-            double[] intervalos = generarIntervalos(num);            
-            CargarFrecuencia(elem, intervalos);
+            double[] elem;
+
+            try
+            {
+                elem = validarMetodo();
+                int num = 10;
+                double[] intervalos = generarIntervalos(num);
+                CargarFrecuencia(elem, intervalos);
+
+                btnUnValor.Enabled = true;
+                btnVeinte.Enabled = true;
+                btnMil.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
         
@@ -494,7 +530,11 @@ namespace TP1_SIM
             dgvTabla.Rows.Clear();
             dgvMetodo.Rows.Clear();
             chartRnd.Series.Clear();
-  
+
+            btnUnValor.Enabled = false;
+            btnVeinte.Enabled = false;
+            btnMil.Enabled = false;
+
 
         }
 

@@ -247,3 +247,28 @@ C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\T
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.pdb
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.config
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.manifest
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.application
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.pdb
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.dll
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.dll
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.pdb
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.xml
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.pdb
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.xml
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.AssemblyReference.cache
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.SuggestedBindingRedirects.cache
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.GeneradorAleatorios.resources
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestKS.resources
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Menu.resources
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Properties.Resources.resources
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestChiCuadrado.resources
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.GenerateResource.cache
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CoreCompileInputs.cache
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe.manifest
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.application
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe
+E:\Workspace\SIM\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.pdb
