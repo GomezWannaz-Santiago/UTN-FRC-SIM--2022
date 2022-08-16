@@ -63,9 +63,29 @@ namespace TP1_SIM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1553065_blue_letter_s_alphabet_letters_icon {
+            get {
+                object obj = ResourceManager.GetObject("1553065_blue_letter_s_alphabet_letters_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap portadas_twitter_2 {
             get {
                 object obj = ResourceManager.GetObject("portadas-twitter-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sistema_1200x480 {
+            get {
+                object obj = ResourceManager.GetObject("sistema-1200x480", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
