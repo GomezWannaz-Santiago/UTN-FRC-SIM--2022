@@ -59,6 +59,7 @@
             this.lblTestKS = new System.Windows.Forms.Label();
             this.chartRnd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbAditivo = new System.Windows.Forms.RadioButton();
             this.rbMixto = new System.Windows.Forms.RadioButton();
             this.rbMultiplicativo = new System.Windows.Forms.RadioButton();
             this.btnUnValor = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.lblRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRaiz.Location = new System.Drawing.Point(45, 92);
             this.lblRaiz.Name = "lblRaiz";
-            this.lblRaiz.Size = new System.Drawing.Size(47, 20);
+            this.lblRaiz.Size = new System.Drawing.Size(35, 16);
             this.lblRaiz.TabIndex = 0;
             this.lblRaiz.Text = "X0: ";
             // 
@@ -86,7 +87,7 @@
             this.txtRaiz.Location = new System.Drawing.Point(85, 90);
             this.txtRaiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRaiz.Name = "txtRaiz";
-            this.txtRaiz.Size = new System.Drawing.Size(39, 27);
+            this.txtRaiz.Size = new System.Drawing.Size(39, 23);
             this.txtRaiz.TabIndex = 1;
             this.txtRaiz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -96,7 +97,7 @@
             this.lblMetodo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMetodo.Location = new System.Drawing.Point(45, 136);
             this.lblMetodo.Name = "lblMetodo";
-            this.lblMetodo.Size = new System.Drawing.Size(234, 20);
+            this.lblMetodo.Size = new System.Drawing.Size(191, 17);
             this.lblMetodo.TabIndex = 4;
             this.lblMetodo.Text = "Seleccionar un método:";
             // 
@@ -141,7 +142,7 @@
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(368, 199);
+            this.btnGenerar.Location = new System.Drawing.Point(368, 222);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(111, 30);
             this.btnGenerar.TabIndex = 7;
@@ -152,7 +153,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(791, 750);
+            this.btnLimpiar.Location = new System.Drawing.Point(791, 779);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
             this.btnLimpiar.TabIndex = 8;
@@ -163,7 +164,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(893, 750);
+            this.btnSalir.Location = new System.Drawing.Point(893, 779);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(94, 29);
             this.btnSalir.TabIndex = 9;
@@ -177,7 +178,7 @@
             this.lblA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblA.Location = new System.Drawing.Point(126, 92);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(27, 20);
+            this.lblA.Size = new System.Drawing.Size(21, 16);
             this.lblA.TabIndex = 10;
             this.lblA.Text = "a:";
             // 
@@ -187,7 +188,7 @@
             this.txtA.Location = new System.Drawing.Point(154, 90);
             this.txtA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtA.Name = "txtA";
-            this.txtA.Size = new System.Drawing.Size(39, 27);
+            this.txtA.Size = new System.Drawing.Size(39, 23);
             this.txtA.TabIndex = 2;
             this.txtA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -197,7 +198,7 @@
             this.lblC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblC.Location = new System.Drawing.Point(196, 91);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(26, 20);
+            this.lblC.Size = new System.Drawing.Size(20, 16);
             this.lblC.TabIndex = 12;
             this.lblC.Text = "c:";
             // 
@@ -207,7 +208,7 @@
             this.txtC.Location = new System.Drawing.Point(222, 90);
             this.txtC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtC.Name = "txtC";
-            this.txtC.Size = new System.Drawing.Size(39, 27);
+            this.txtC.Size = new System.Drawing.Size(39, 23);
             this.txtC.TabIndex = 3;
             this.txtC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -217,7 +218,7 @@
             this.txtM.Location = new System.Drawing.Point(298, 90);
             this.txtM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtM.Name = "txtM";
-            this.txtM.Size = new System.Drawing.Size(39, 27);
+            this.txtM.Size = new System.Drawing.Size(39, 23);
             this.txtM.TabIndex = 4;
             this.txtM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -227,7 +228,7 @@
             this.lblM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblM.Location = new System.Drawing.Point(264, 92);
             this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(34, 20);
+            this.lblM.Size = new System.Drawing.Size(26, 16);
             this.lblM.TabIndex = 15;
             this.lblM.Text = "m:";
             // 
@@ -237,7 +238,7 @@
             this.txtK.Location = new System.Drawing.Point(368, 90);
             this.txtK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtK.Name = "txtK";
-            this.txtK.Size = new System.Drawing.Size(39, 27);
+            this.txtK.Size = new System.Drawing.Size(39, 23);
             this.txtK.TabIndex = 5;
             this.txtK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -247,7 +248,7 @@
             this.lblK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblK.Location = new System.Drawing.Point(340, 92);
             this.lblK.Name = "lblK";
-            this.lblK.Size = new System.Drawing.Size(27, 20);
+            this.lblK.Size = new System.Drawing.Size(20, 16);
             this.lblK.TabIndex = 17;
             this.lblK.Text = "k:";
             // 
@@ -257,7 +258,7 @@
             this.lblG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblG.Location = new System.Drawing.Point(410, 92);
             this.lblG.Name = "lblG";
-            this.lblG.Size = new System.Drawing.Size(28, 20);
+            this.lblG.Size = new System.Drawing.Size(21, 16);
             this.lblG.TabIndex = 18;
             this.lblG.Text = "g:";
             // 
@@ -267,7 +268,7 @@
             this.txtG.Location = new System.Drawing.Point(440, 90);
             this.txtG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtG.Name = "txtG";
-            this.txtG.Size = new System.Drawing.Size(39, 27);
+            this.txtG.Size = new System.Drawing.Size(39, 23);
             this.txtG.TabIndex = 6;
             this.txtG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -281,7 +282,7 @@
             this.dgvMetodo.Location = new System.Drawing.Point(557, 422);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
-            this.dgvMetodo.Size = new System.Drawing.Size(430, 313);
+            this.dgvMetodo.Size = new System.Drawing.Size(430, 351);
             this.dgvMetodo.TabIndex = 29;
             // 
             // Desde
@@ -312,7 +313,7 @@
             this.lblTestKS.Location = new System.Drawing.Point(63, 16);
             this.lblTestKS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTestKS.Name = "lblTestKS";
-            this.lblTestKS.Size = new System.Drawing.Size(845, 52);
+            this.lblTestKS.Size = new System.Drawing.Size(681, 42);
             this.lblTestKS.TabIndex = 42;
             this.lblTestKS.Text = "Generador de Numeros Aleatorios";
             // 
@@ -322,7 +323,7 @@
             this.chartRnd.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRnd.Legends.Add(legend1);
-            this.chartRnd.Location = new System.Drawing.Point(49, 379);
+            this.chartRnd.Location = new System.Drawing.Point(48, 413);
             this.chartRnd.Margin = new System.Windows.Forms.Padding(4);
             this.chartRnd.Name = "chartRnd";
             this.chartRnd.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
@@ -333,22 +334,36 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.rbAditivo);
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(49, 159);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 70);
+            this.panel1.Size = new System.Drawing.Size(300, 93);
             this.panel1.TabIndex = 44;
+            // 
+            // rbAditivo
+            // 
+            this.rbAditivo.AutoSize = true;
+            this.rbAditivo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAditivo.Location = new System.Drawing.Point(22, 64);
+            this.rbAditivo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbAditivo.Name = "rbAditivo";
+            this.rbAditivo.Size = new System.Drawing.Size(76, 20);
+            this.rbAditivo.TabIndex = 47;
+            this.rbAditivo.TabStop = true;
+            this.rbAditivo.Text = "Aditivo";
+            this.rbAditivo.UseVisualStyleBackColor = true;
             // 
             // rbMixto
             // 
             this.rbMixto.AutoSize = true;
             this.rbMixto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMixto.Location = new System.Drawing.Point(22, 38);
+            this.rbMixto.Location = new System.Drawing.Point(22, 35);
             this.rbMixto.Margin = new System.Windows.Forms.Padding(4);
             this.rbMixto.Name = "rbMixto";
-            this.rbMixto.Size = new System.Drawing.Size(83, 24);
+            this.rbMixto.Size = new System.Drawing.Size(65, 20);
             this.rbMixto.TabIndex = 46;
             this.rbMixto.TabStop = true;
             this.rbMixto.Text = "Mixto";
@@ -361,7 +376,7 @@
             this.rbMultiplicativo.Location = new System.Drawing.Point(22, 6);
             this.rbMultiplicativo.Margin = new System.Windows.Forms.Padding(4);
             this.rbMultiplicativo.Name = "rbMultiplicativo";
-            this.rbMultiplicativo.Size = new System.Drawing.Size(160, 24);
+            this.rbMultiplicativo.Size = new System.Drawing.Size(122, 20);
             this.rbMultiplicativo.TabIndex = 45;
             this.rbMultiplicativo.TabStop = true;
             this.rbMultiplicativo.Text = "Multiplicativo";
@@ -369,8 +384,9 @@
             // 
             // btnUnValor
             // 
+            this.btnUnValor.Enabled = false;
             this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnValor.Location = new System.Drawing.Point(49, 243);
+            this.btnUnValor.Location = new System.Drawing.Point(49, 271);
             this.btnUnValor.Name = "btnUnValor";
             this.btnUnValor.Size = new System.Drawing.Size(430, 31);
             this.btnUnValor.TabIndex = 47;
@@ -379,8 +395,9 @@
             // 
             // btnMil
             // 
+            this.btnMil.Enabled = false;
             this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMil.Location = new System.Drawing.Point(49, 341);
+            this.btnMil.Location = new System.Drawing.Point(49, 369);
             this.btnMil.Name = "btnMil";
             this.btnMil.Size = new System.Drawing.Size(430, 31);
             this.btnMil.TabIndex = 48;
@@ -389,8 +406,9 @@
             // 
             // btnVeinte
             // 
+            this.btnVeinte.Enabled = false;
             this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeinte.Location = new System.Drawing.Point(49, 292);
+            this.btnVeinte.Location = new System.Drawing.Point(49, 320);
             this.btnVeinte.Name = "btnVeinte";
             this.btnVeinte.Size = new System.Drawing.Size(430, 31);
             this.btnVeinte.TabIndex = 49;
@@ -399,10 +417,10 @@
             // 
             // GeneradorAleatorios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1029, 798);
+            this.ClientSize = new System.Drawing.Size(1029, 820);
             this.Controls.Add(this.btnVeinte);
             this.Controls.Add(this.btnMil);
             this.Controls.Add(this.btnUnValor);
@@ -476,6 +494,7 @@
         private System.Windows.Forms.Button btnUnValor;
         private System.Windows.Forms.Button btnMil;
         private System.Windows.Forms.Button btnVeinte;
+        private System.Windows.Forms.RadioButton rbAditivo;
     }
 }
 
