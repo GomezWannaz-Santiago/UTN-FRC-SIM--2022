@@ -87,6 +87,7 @@
     <Compile Include="GeneradorAleatorios.Designer.cs">
       <DependentUpon>GeneradorAleatorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="PruebaChiCuadrado.cs" />
     <Compile Include="TestKS.cs">
       <SubType>Form</SubType>
     </Compile>
