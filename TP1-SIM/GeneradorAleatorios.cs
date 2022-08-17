@@ -518,12 +518,13 @@ namespace TP1_SIM
         private void CargarFrecuencia(double[] numeros, double[] intervalos)
         {
             int[] frecuencias = new int[intervalos.Length];
+            //Busco el ultimo valor de la iteracion para obtener la cantidad de RND generados (Lucas)
 
-
+            int cantFilas = dgvTabla.Rows.Count - 1; //Obtengo la ultima fila de la tabla (resto 1 por la fila vacia)
+            int cantIteraciones = int.Parse(dgvTabla.Rows[cantFilas - 1].Cells[0].Value.ToString());//Se obtiene el valor de la ultima iteracion
 
             for (int i = 0; i < numeros.Length; i++)
             {
-               
                 for (int j = 0; j < intervalos.Length; j++)
                 {
                     if (j == 0)
@@ -532,8 +533,7 @@ namespace TP1_SIM
                         {
                             frecuencias[j]++;
                             
-                        }
-                        
+                        }            
                     }
                     else
                     {
@@ -542,13 +542,7 @@ namespace TP1_SIM
                             frecuencias[j]++;
                         }
                     }
-
-
                 }
-
-                
-
-
             }
 
             for (int i = 0; i < intervalos.Length; i++)
@@ -557,11 +551,17 @@ namespace TP1_SIM
 
                 if (i == 0)
                 {
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
+                    //dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
+                    double freObservada = frecuencias[i] - 1;
+                    double frecRelativa = freObservada / cantIteraciones;
+                    dgvMetodo.Rows.Add(0, intervalos[i], Math.Round(frecRelativa, 4)).ToString();
                 }
                 else
                 {
-                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i]); 
+                    //dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i]); 
+                    double freObservada = frecuencias[i];
+                    double frecRelativa = freObservada / cantIteraciones;
+                    dgvMetodo.Rows.Add(0, intervalos[i], Math.Round(frecRelativa, 4)).ToString();
                 }
                 
 
