@@ -43,15 +43,12 @@ namespace TP1_SIM
 
             if (chkMetodoMixto.Checked)
             {
-                if (string.IsNullOrEmpty(txtA.Text) || string.IsNullOrEmpty(txtC.Text) || string.IsNullOrEmpty(txtSemilla.Text))
+                if (string.IsNullOrEmpty(txtA.Text) || string.IsNullOrEmpty(txtC.Text) || string.IsNullOrEmpty(txtSemilla.Text) || string.IsNullOrEmpty(txtM.Text))
                     throw new Exception("Complete todos los campos referentes al método mixto por favor");
                 else if (!int.TryParse(txtA.Text, out int a))
                     throw new Exception("El campo A debe ser un número");
                 else if (a % 2 == 0 || a % 3 == 0 || a % 5 == 0)
                     throw new Exception("En este método A no puede ser par ni divisible por 3 ni por 5. ");
-
-
-
             }
 
 
@@ -69,7 +66,7 @@ namespace TP1_SIM
                 double[] elem;
                 if (chkMetodoMixto.Checked)
                 {
-                    elem = GenerarRNDsConMetodoMixto(int.Parse(mstxtMuestra.Text), int.Parse(txtSemilla.Text),int.Parse(txtA.Text), int.Parse(txtC.Text));                    
+                    elem = GenerarRNDsConMetodoMixto(int.Parse(mstxtMuestra.Text), int.Parse(txtSemilla.Text),int.Parse(txtA.Text), int.Parse(txtC.Text), int.Parse(txtM.Text));                    
                 }
                 else
                 {
@@ -94,20 +91,22 @@ namespace TP1_SIM
             }
         }
 
-        public double[] GenerarRNDsConMetodoMixto(int cantidadAGenerar, int x0, int a, int c)
+        public double[] GenerarRNDsConMetodoMixto(int cantidadAGenerar, int x0, int a, int c, int m)
         {
-            int m = int.MaxValue;
-            double[] numeros = new double[cantidadAGenerar];
-            numeros[0] = (a * x0 + c) % m;
-            double xAnterior = numeros[0];
+            double xAnterior = (a * x0 + c) % m;
             double xActual;
+            double rndActual;
+            double[] numeros = new double[cantidadAGenerar];
+
             for(int i = 1; i < cantidadAGenerar; i++)
             {
                 xActual = (a * xAnterior + c) % m;
-                numeros[i] = xActual / m;
+                rndActual = xActual / m;
+                
+                numeros[i] = (Math.Round(rndActual, 4));
                 xAnterior = xActual;
             }
-
+            dgvSerie.DataSource = numeros.Select(x => new { Serie = x }).ToList();
             return numeros;
         }
 
@@ -115,53 +114,16 @@ namespace TP1_SIM
         {
             Random rnd = new Random();
             double[] numeros = new double[n];
-            Console.WriteLine("Generando " + n + " numeros aleatorios");
 
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 1; i < n; i++)
             {
                 numeros[i] = Math.Round(rnd.NextDouble(), 4);
-                Console.WriteLine(numeros[i]);
-                dgvSerie.Rows.Add(numeros[i]);
             }
-
+            dgvSerie.DataSource = numeros.Select(x => new { Serie = x }).ToList();
             return numeros;
         }
 
-        private string ValidarHipotesis(string valorCalculado, int cantidadIntervalos  )
-        {
-            string msg = "El valor tabulado es de {0} y es {1} al calculado por lo tanto se {2} la hipotesis";
-            
-            double calculado = Convert.ToDouble(valorCalculado);
-            double valorTabulado;
-            switch (cantidadIntervalos)
-            {
-                case 5:
-                    valorTabulado = 9.5;
-                    break;
-                case 8:
-                    valorTabulado = 14.1;
-                    break;
-                case 10:
-                    valorTabulado = 16.9;
-                    break;
-                case 12:
-                    valorTabulado = 19.7;
-                    break;
-                default:
-                    valorTabulado = 0;
-                    break;
-            }
-
-            if(calculado >= valorTabulado)
-            {
-                msg =string.Format(msg, valorTabulado.ToString(), "MENOR", "RECHAZA");
-            }
-            else
-            {
-                msg = string.Format(msg, valorTabulado.ToString(), "MAYOR", "ACEPTA");
-            }
-            return msg;
-        }
+ 
         public double[] GenerarIntervalos(int cantidadIntervalos)
         {            
             double[] intervalos = new double[cantidadIntervalos];
@@ -239,25 +201,65 @@ namespace TP1_SIM
             }     
         }
 
- 
+        private string ValidarHipotesis(string valorCalculado, int cantidadIntervalos)
+        {
+            string msg = "Se {2} la hipotesis dado que el valor tabulado {0} es {1} al calculado";
 
-        
+            double calculado = Convert.ToDouble(valorCalculado);
+            double valorTabulado;
+            switch (cantidadIntervalos)
+            {
+                case 5:
+                    valorTabulado = 9.4877;
+                    break;
+                case 8:
+                    valorTabulado = 14.0671;
+                    break;
+                case 10:
+                    valorTabulado = 16.9190;
+                    break;
+                case 12:
+                    valorTabulado = 19.7;
+                    break;
+                default:
+                    valorTabulado = 10000;
+                    break;
+            }
+
+            if (calculado >= valorTabulado)
+            {
+                msg = string.Format(msg, valorTabulado.ToString(), "MENOR", "RECHAZA");
+            }
+            else
+            {
+                msg = string.Format(msg, valorTabulado.ToString(), "MAYOR", "ACEPTA");
+            }
+            return msg;
+        }
+
+
 
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
-            mstxtMuestra.Clear();
             cmbIntervalos.SelectedIndex = -1;
+            mstxtMuestra.Clear();            
             txt_calculado.Clear();
             txt_gradoslibertad.Clear();
+            txtM.Clear();
+            txtA.Clear();
+            txtC.Clear();
+            txtSemilla.Clear();            
 
             LimpiarTablas();
         }
 
         private void LimpiarTablas()
-        {                        
-            dgvSerie.Rows.Clear();
+        {
+            
+            dgvSerie.DataSource = null;
             dgvFrecuencias.Rows.Clear();
-            chart1.Series.Clear();            
+            chart1.Series.Clear();
+            System.GC.Collect();
         }
 
         private void TestChiCuadrado_Load(object sender, EventArgs e)
@@ -286,7 +288,8 @@ namespace TP1_SIM
         {
             txtA.Enabled = !txtA.Enabled;
             txtC.Enabled = !txtC.Enabled;
-            txtSemilla.Enabled = !txtSemilla.Enabled;            
+            txtSemilla.Enabled = !txtSemilla.Enabled;
+            txtM.Enabled = !txtM.Enabled;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -294,5 +297,9 @@ namespace TP1_SIM
             this.Dispose();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
