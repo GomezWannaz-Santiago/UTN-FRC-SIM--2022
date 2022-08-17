@@ -19,6 +19,7 @@ namespace TP1_SIM
         private bool proximo20 = false;
         private bool final = false;
         private bool generarDH = false;
+        private bool primeraVuelta = false;
         public GeneradorAleatorios()
         {
             InitializeComponent();            
@@ -152,13 +153,95 @@ namespace TP1_SIM
         //    return num;
         //}
 
+        //private List<int> generarMixto()
+        //{
+        //    if (rbMixto.Checked && txtC.Text != "")
+        //    {
+        //        int x = int.Parse(txtRaiz.Text);
+        //        int c = int.Parse(txtC.Text);
+
+        //        int a = 0;
+        //        int m = 0;
+        //        int k = 0;
+        //        int g = 0;
+
+
+        //        if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
+        //        {
+        //            controlarVariables();
+        //            return null;
+        //        }
+        //        else
+        //        {
+        //            if (txtK.Text != "" && txtA.Text != "")
+        //            {
+        //                a = int.Parse(txtA.Text);
+        //                k = int.Parse(txtK.Text);
+        //            }
+        //            else if (txtK.Text == "")
+        //            {
+        //                a = int.Parse(txtA.Text);
+
+        //            }
+        //            else if (txtA.Text == "")
+        //            {
+        //                k = int.Parse(txtK.Text);
+        //                a = 1 + 4 * k;
+        //                //
+        //                txtA.Text = a.ToString();
+
+        //            }
+
+
+        //            if (txtM.Text != "" && txtG.Text != "")
+        //            {
+        //                g = int.Parse(txtG.Text);
+        //                m = int.Parse(txtM.Text);
+        //            }
+        //            else if (txtG.Text == "")
+        //            {
+        //                m = int.Parse(txtM.Text);
+
+        //            }
+
+        //            else if (txtM.Text == "")
+        //            {
+        //                g = int.Parse(txtG.Text);
+        //                m = (int)Math.Pow(2, g);
+        //                //
+        //                txtM.Text = m.ToString();
+        //            }
+
+
+
+        //            List<int> elementos = new List<int>();
+        //            elementos.Add(x);
+        //            elementos.Add(a);
+        //            elementos.Add(c);
+        //            elementos.Add(m);
+        //            elementos.Add(k);
+        //            elementos.Add(g);
+
+        //            return elementos;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+
+
+        //}
+
+
+        // VER SI BORRAR ESTO
+
         private List<int> generarMixto()
         {
             if (rbMixto.Checked && txtC.Text != "")
             {
-                int x = int.Parse(txtRaiz.Text);
+                int x = 0; 
                 int c = int.Parse(txtC.Text);
-
                 int a = 0;
                 int m = 0;
                 int k = 0;
@@ -188,7 +271,7 @@ namespace TP1_SIM
                         a = 1 + 4 * k;
                         //
                         txtA.Text = a.ToString();
-                        
+
                     }
 
 
@@ -200,7 +283,7 @@ namespace TP1_SIM
                     else if (txtG.Text == "")
                     {
                         m = int.Parse(txtM.Text);
-                        
+
                     }
 
                     else if (txtM.Text == "")
@@ -210,6 +293,21 @@ namespace TP1_SIM
                         //
                         txtM.Text = m.ToString();
                     }
+
+                if (primeraVuelta == true)
+                {
+                     x = int.Parse(txtRaiz.Text);
+
+                }
+                else
+                {
+                    int col = 1;
+
+                    int registros = dgvTabla.RowCount;
+
+                    int rnd = (int)dgvTabla.Rows[registros - 1].Cells[col].Value;
+                    x = rnd * (m - 1);
+                }
 
 
 
@@ -229,13 +327,13 @@ namespace TP1_SIM
                 return null;
             }
 
-            
+
         }
+
         private List<int> generarMultiplicativo()
         {
 
-            int x = int.Parse(txtRaiz.Text);
-
+            int x = 0;
             int c = 0;
             int a = 0;
             int m = 0;
@@ -264,7 +362,7 @@ namespace TP1_SIM
                 {
                     k = int.Parse(txtK.Text);
                     a = 3 + 8 * k;
-                    
+
                     txtA.Text = a.ToString();
                 }
 
@@ -286,6 +384,21 @@ namespace TP1_SIM
                     txtM.Text = m.ToString();
                 }
 
+                if (primeraVuelta == true)
+                {
+                    x = int.Parse(txtRaiz.Text);
+
+                }
+                else
+                {
+                    int col = 1;
+
+                    int registros = dgvTabla.RowCount;
+
+                    int rnd = (int)dgvTabla.Rows[registros - 1].Cells[col].Value;
+                    x = rnd * (m - 1);
+                }
+
 
 
                 List<int> elementos = new List<int>();
@@ -301,10 +414,86 @@ namespace TP1_SIM
 
         }
 
+        // HASTA ACÁ BORRAR en caso esté mal y descomentarizar abajo y creo arriba
+
+
+
+
+
+        //private List<int> generarMultiplicativo()
+        //{
+
+        //    int x = int.Parse(txtRaiz.Text);
+
+        //    int c = 0;
+        //    int a = 0;
+        //    int m = 0;
+        //    int k = 0;
+        //    int g = 0;
+
+
+        //    if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
+        //    {
+        //        controlarVariables();
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        if (txtK.Text != "" && txtA.Text != "")
+        //        {
+        //            a = int.Parse(txtA.Text);
+        //            k = int.Parse(txtK.Text);
+        //        }
+        //        else if (txtK.Text == "")
+        //        {
+        //            a = int.Parse(txtA.Text);
+
+        //        }
+        //        else if (txtA.Text == "")
+        //        {
+        //            k = int.Parse(txtK.Text);
+        //            a = 3 + 8 * k;
+
+        //            txtA.Text = a.ToString();
+        //        }
+
+
+        //        if (txtM.Text != "" && txtG.Text != "")
+        //        {
+        //            g = int.Parse(txtG.Text);
+        //            m = int.Parse(txtM.Text);
+        //        }
+        //        else if (txtG.Text == "")
+        //        {
+        //            m = int.Parse(txtM.Text);
+        //        }
+
+        //        else if (txtM.Text == "")
+        //        {
+        //            g = int.Parse(txtG.Text);
+        //            m = (int)Math.Pow(2, g);
+        //            txtM.Text = m.ToString();
+        //        }
+
+
+
+        //        List<int> elementos = new List<int>();
+        //        elementos.Add(x);
+        //        elementos.Add(a);
+        //        elementos.Add(c);
+        //        elementos.Add(m);
+        //        elementos.Add(k);
+        //        elementos.Add(g);
+
+        //        return elementos;
+        //    }
+
+        //}
+
         private double[] validarMetodo()
         {
             //double[] numeros = new double[int.Parse(txt_valores.Text)];
-            // cambie por 20 igual ver si es necesario pasarlo a double o poner 20,0000 (mari)
+            // cambie por 20 igual ver si es necesario pasarlo a double  (mari)
             double[] numeros = new double[20];
             if (bandOk == true)
             {
@@ -354,6 +543,10 @@ namespace TP1_SIM
             dgvMetodo.Rows.Clear();
             controlarVariables();
             chartRnd.Series.Clear();
+            btnUnValor.Enabled = true;
+            btnVeinte.Enabled = true;
+            btnMil.Enabled = true;
+            primeraVuelta = true;
 
             double[] elem = validarMetodo();
             // int num = cantidadIntervalos();
@@ -363,9 +556,8 @@ namespace TP1_SIM
             CargarFrecuencia(elem, intervalos);
             
         }
-        
-       
-        private double[] cargarTabla(List<int> elements )
+
+        private double[] cargarTabla(List<int> elements, int vueltas=20)
         {
             int x = elements[0];
             int a = elements[1];
@@ -376,33 +568,49 @@ namespace TP1_SIM
 
             double axc;
             double resto = 0;
-            double rnd;
-            // int vueltas = Convert.ToInt32(txt_valores.Text);
-            // Acá agregue lo de los 20 valores a generar y borré la selección del usuario (mari)
-            int vueltas = 20 ;
+            double rnd;           
             int inicio = 0;
-            
+            //sé que no es lo más prolijo, cuando esté más despierta lo cambio jaja
+            int Sumindice = dgvTabla.Rows.Count -1;
 
             try
             {
+                //if (proximo == true)
+                //{
+                //    vueltas = dgvTabla.Rows.Count;
+                //    dgvTabla.Rows.Clear();
+                //    proximo = false;
+                //}
+
+                //if (proximo20 == true)
+                //{
+                //    vueltas = dgvTabla.Rows.Count + 19;
+                //    dgvTabla.Rows.Clear();
+                //    proximo20 = false;
+                //}
+
+                //if (final == true)
+                //{
+                //    vueltas = 1000;
+                //    dgvTabla.Rows.Clear();
+                //    final = false;
+                //}
                 if (proximo == true)
                 {
-                    vueltas = dgvTabla.Rows.Count;
-                    dgvTabla.Rows.Clear();
+                    vueltas = 1;                   
                     proximo = false;
                 }
 
                 if (proximo20 == true)
                 {
-                    vueltas = dgvTabla.Rows.Count + 19;
-                    dgvTabla.Rows.Clear();
+                    vueltas = 20;
                     proximo20 = false;
                 }
 
                 if (final == true)
                 {
-                    vueltas = 50000;
-                    dgvTabla.Rows.Clear();
+                    //razonar bien si va ese +1 o me lo inventé
+                    vueltas = 1000 - dgvTabla.Rows.Count +1;
                     final = false;
                 }
             }
@@ -415,7 +623,9 @@ namespace TP1_SIM
 
             double[] numeros = new double[vueltas + 1];
 
-            if (vueltas <= 50000 && generarDH == false)
+            // ver esto del generador DH
+
+            if (vueltas <= 1000 && generarDH == false)
             {
                 for (int i = 1; i <= vueltas; i++)
                 {
@@ -424,7 +634,7 @@ namespace TP1_SIM
 
                         axc = a * x + c;
                         resto = axc % m;
-                        rnd = resto / m;                       
+                        rnd = resto / m;
 
                     }
                     else
@@ -434,14 +644,16 @@ namespace TP1_SIM
                         rnd = resto / m;
 
                     }
-
-                    dgvTabla.Rows.Add(i, rnd);
+                    // no entendí lo del vector numeros
+                    dgvTabla.Rows.Add( (i+ Sumindice), rnd);
                     numeros[i] = rnd;
 
                 }
 
             }
-            else if(generarDH == true){
+            // else if??
+            else if (generarDH == true)
+            {
                 for (int i = inicio; i <= vueltas; i++)
                 {
                     if (i == inicio)
@@ -460,8 +672,8 @@ namespace TP1_SIM
 
                     }
 
-                    
-                    dgvTabla.Rows.Add(i, rnd);
+
+                    dgvTabla.Rows.Add((i + Sumindice), rnd);
                     numeros[i] = rnd;
                 }
                 generarDH = false;
@@ -475,7 +687,118 @@ namespace TP1_SIM
 
         }
 
-        
+
+        //private double[] cargarTabla(List<int> elements )
+        //{
+        //    int x = elements[0];
+        //    int a = elements[1];
+        //    int c = elements[2];
+        //    int m = elements[3];
+        //    int k = elements[4];
+        //    int g = elements[5];
+
+        //    double axc;
+        //    double resto = 0;
+        //    double rnd;
+        //    // int vueltas = Convert.ToInt32(txt_valores.Text);
+        //    // Acá agregue lo de los 20 valores a generar y borré la selección del usuario (mari)
+        //    int vueltas = 20 ;
+        //    int inicio = 0;
+
+
+        //    try
+        //    {
+        //        if (proximo == true)
+        //        {
+        //            vueltas = dgvTabla.Rows.Count;
+        //            dgvTabla.Rows.Clear();
+        //            proximo = false;
+        //        }
+
+        //        if (proximo20 == true)
+        //        {
+        //            vueltas = dgvTabla.Rows.Count + 19;
+        //            dgvTabla.Rows.Clear();
+        //            proximo20 = false;
+        //        }
+
+        //        if (final == true)
+        //        {
+        //            vueltas = 50000;
+        //            dgvTabla.Rows.Clear();
+        //            final = false;
+        //        }
+        //    }
+        //    catch (Exception xx)
+        //    {
+
+        //        MessageBox.Show("Error: " + xx);
+        //        throw;
+        //    }
+
+        //    double[] numeros = new double[vueltas + 1];
+
+        //    if (vueltas <= 50000 && generarDH == false)
+        //    {
+        //        for (int i = 1; i <= vueltas; i++)
+        //        {
+        //            if (i == 1)
+        //            {
+
+        //                axc = a * x + c;
+        //                resto = axc % m;
+        //                rnd = resto / m;                       
+
+        //            }
+        //            else
+        //            {
+        //                axc = a * resto + c;
+        //                resto = axc % m;
+        //                rnd = resto / m;
+
+        //            }
+
+        //            dgvTabla.Rows.Add(i, rnd);
+        //            numeros[i] = rnd;
+
+        //        }
+
+        //    }
+        //    else if(generarDH == true){
+        //        for (int i = inicio; i <= vueltas; i++)
+        //        {
+        //            if (i == inicio)
+        //            {
+
+        //                axc = a * x + c;
+        //                resto = axc % m;
+        //                rnd = resto / m;
+
+        //            }
+        //            else
+        //            {
+        //                axc = a * resto + c;
+        //                resto = axc % m;
+        //                rnd = resto / m;
+
+        //            }
+
+
+        //            dgvTabla.Rows.Add(i, rnd);
+        //            numeros[i] = rnd;
+        //        }
+        //        generarDH = false;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se pueden generar mas numeros");
+        //    }
+
+        //    return numeros;
+
+        //}
+
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();         
@@ -494,25 +817,29 @@ namespace TP1_SIM
             dgvTabla.Rows.Clear();
             dgvMetodo.Rows.Clear();
             chartRnd.Series.Clear();
-  
+            btnUnValor.Enabled = false;
+            btnVeinte.Enabled = false;
+            btnMil.Enabled = false;
+            primeraVuelta = false;
+
 
         }
 
         // BORRAR SI NO LO LLEGO A USAR !!!!!!!!!!!!!!!
-        private void limpiar()
-        {
-            txtRaiz.Clear();
-            txtA.Clear();
-            txtC.Clear();
-            txtG.Clear();
-            txtK.Clear();
-            txtM.Clear();
-            rbMixto.Checked = false;
-            rbMultiplicativo.Checked = false;
-            dgvTabla.Rows.Clear();
-            dgvMetodo.Rows.Clear();
-            chartRnd.Series.Clear();
-        }
+        //private void limpiar()
+        //{
+        //    txtRaiz.Clear();
+        //    txtA.Clear();
+        //    txtC.Clear();
+        //    txtG.Clear();
+        //    txtK.Clear();
+        //    txtM.Clear();
+        //    rbMixto.Checked = false;
+        //    rbMultiplicativo.Checked = false;
+        //    dgvTabla.Rows.Clear();
+        //    dgvMetodo.Rows.Clear();
+        //    chartRnd.Series.Clear();
+        //}
         
         
         private void CargarFrecuencia(double[] numeros, double[] intervalos)
@@ -617,5 +944,50 @@ namespace TP1_SIM
                 e.Handled = true;
             }
         }
+
+
+        private void btnUnValor_Click(object sender, EventArgs e)
+        {
+            proximo = true;
+            controlarVariables();
+            double[] elem = validarMetodo();
+
+
+            //int num = 10;
+            //double[] intervalos = generarIntervalos(num);
+
+            //ver esta ultima como hacer
+            //CargarFrecuencia(elem, intervalos);
+        }
+
+        private void btnVeinte_Click(object sender, EventArgs e)
+        {
+            proximo20 = true;
+            controlarVariables();
+            double[] elem = validarMetodo();
+
+
+            //int num = 10;
+            //double[] intervalos = generarIntervalos(num);
+
+
+            //ver esta ultima como hacer
+            //CargarFrecuencia(elem, intervalos);
+        }
+
+        private void btnMil_Click(object sender, EventArgs e)
+        {
+            final = true;
+            controlarVariables();
+            double[] elem = validarMetodo();
+
+           
+            //int num = 10;
+            //double[] intervalos = generarIntervalos(num);
+
+            //ver esta ultima como hacer
+            //CargarFrecuencia(elem, intervalos);
+        }
+
     }
 }

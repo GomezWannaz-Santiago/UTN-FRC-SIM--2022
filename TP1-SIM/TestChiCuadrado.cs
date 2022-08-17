@@ -288,10 +288,10 @@ namespace TP1_SIM
 
         
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+        //private void btnSalir_Click(object sender, EventArgs e)
+        //{
+        //    this.Dispose();
+        //}
 
 
         private void btn_limpiar_Click(object sender, EventArgs e)
