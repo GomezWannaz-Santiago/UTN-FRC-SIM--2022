@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -239,6 +239,7 @@ namespace TP1_SIM
 
 
 
+
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             cmbIntervalos.SelectedIndex = -1;
@@ -249,7 +250,6 @@ namespace TP1_SIM
             txtA.Clear();
             txtC.Clear();
             txtSemilla.Clear();            
-
             LimpiarTablas();
         }
 

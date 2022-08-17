@@ -41,7 +41,6 @@
             this.rnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.lblA = new System.Windows.Forms.Label();
             this.txtA = new System.Windows.Forms.TextBox();
             this.lblC = new System.Windows.Forms.Label();
@@ -64,17 +63,19 @@
             this.btnUnValor = new System.Windows.Forms.Button();
             this.btnMil = new System.Windows.Forms.Button();
             this.btnVeinte = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMetodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRnd)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRaiz
             // 
             this.lblRaiz.AutoSize = true;
             this.lblRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaiz.Location = new System.Drawing.Point(45, 92);
+            this.lblRaiz.Location = new System.Drawing.Point(47, 200);
             this.lblRaiz.Name = "lblRaiz";
             this.lblRaiz.Size = new System.Drawing.Size(47, 20);
             this.lblRaiz.TabIndex = 0;
@@ -83,7 +84,7 @@
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(85, 90);
+            this.txtRaiz.Location = new System.Drawing.Point(87, 198);
             this.txtRaiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(39, 27);
@@ -93,23 +94,24 @@
             // lblMetodo
             // 
             this.lblMetodo.AutoSize = true;
-            this.lblMetodo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMetodo.Location = new System.Drawing.Point(45, 136);
+            this.lblMetodo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetodo.Location = new System.Drawing.Point(47, 120);
             this.lblMetodo.Name = "lblMetodo";
-            this.lblMetodo.Size = new System.Drawing.Size(234, 20);
+            this.lblMetodo.Size = new System.Drawing.Size(214, 20);
             this.lblMetodo.TabIndex = 4;
             this.lblMetodo.Text = "Seleccionar un método:";
             // 
             // dgvTabla
             // 
+            this.dgvTabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ite,
             this.rnd});
-            this.dgvTabla.Location = new System.Drawing.Point(586, 90);
+            this.dgvTabla.Location = new System.Drawing.Point(66, 22);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
-            this.dgvTabla.Size = new System.Drawing.Size(374, 308);
+            this.dgvTabla.Size = new System.Drawing.Size(376, 395);
             this.dgvTabla.TabIndex = 6;
             // 
             // ite
@@ -140,42 +142,34 @@
             // 
             // btnGenerar
             // 
+            this.btnGenerar.BackColor = System.Drawing.Color.Black;
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(368, 199);
+            this.btnGenerar.ForeColor = System.Drawing.Color.White;
+            this.btnGenerar.Location = new System.Drawing.Point(52, 244);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(111, 30);
+            this.btnGenerar.Size = new System.Drawing.Size(429, 31);
             this.btnGenerar.TabIndex = 7;
             this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(791, 750);
+            this.btnLimpiar.Location = new System.Drawing.Point(296, 725);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
+            this.btnLimpiar.Size = new System.Drawing.Size(174, 29);
             this.btnLimpiar.TabIndex = 8;
             this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(893, 750);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(94, 29);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblA
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(126, 92);
+            this.lblA.Location = new System.Drawing.Point(128, 200);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(27, 20);
             this.lblA.TabIndex = 10;
@@ -184,7 +178,7 @@
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(154, 90);
+            this.txtA.Location = new System.Drawing.Point(156, 198);
             this.txtA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(39, 27);
@@ -195,7 +189,7 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.Location = new System.Drawing.Point(196, 91);
+            this.lblC.Location = new System.Drawing.Point(198, 199);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(26, 20);
             this.lblC.TabIndex = 12;
@@ -204,7 +198,7 @@
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(222, 90);
+            this.txtC.Location = new System.Drawing.Point(224, 198);
             this.txtC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(39, 27);
@@ -214,7 +208,7 @@
             // txtM
             // 
             this.txtM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtM.Location = new System.Drawing.Point(298, 90);
+            this.txtM.Location = new System.Drawing.Point(300, 198);
             this.txtM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(39, 27);
@@ -225,7 +219,7 @@
             // 
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(264, 92);
+            this.lblM.Location = new System.Drawing.Point(266, 200);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(34, 20);
             this.lblM.TabIndex = 15;
@@ -234,7 +228,7 @@
             // txtK
             // 
             this.txtK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtK.Location = new System.Drawing.Point(368, 90);
+            this.txtK.Location = new System.Drawing.Point(370, 198);
             this.txtK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtK.Name = "txtK";
             this.txtK.Size = new System.Drawing.Size(39, 27);
@@ -245,7 +239,7 @@
             // 
             this.lblK.AutoSize = true;
             this.lblK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblK.Location = new System.Drawing.Point(340, 92);
+            this.lblK.Location = new System.Drawing.Point(342, 200);
             this.lblK.Name = "lblK";
             this.lblK.Size = new System.Drawing.Size(27, 20);
             this.lblK.TabIndex = 17;
@@ -255,7 +249,7 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(410, 92);
+            this.lblG.Location = new System.Drawing.Point(412, 200);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(28, 20);
             this.lblG.TabIndex = 18;
@@ -264,7 +258,7 @@
             // txtG
             // 
             this.txtG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtG.Location = new System.Drawing.Point(440, 90);
+            this.txtG.Location = new System.Drawing.Point(442, 198);
             this.txtG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtG.Name = "txtG";
             this.txtG.Size = new System.Drawing.Size(39, 27);
@@ -273,15 +267,16 @@
             // 
             // dgvMetodo
             // 
+            this.dgvMetodo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvMetodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMetodo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Desde,
             this.Hasta,
             this.FrecAbs});
-            this.dgvMetodo.Location = new System.Drawing.Point(557, 422);
+            this.dgvMetodo.Location = new System.Drawing.Point(39, 438);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
-            this.dgvMetodo.Size = new System.Drawing.Size(430, 313);
+            this.dgvMetodo.Size = new System.Drawing.Size(431, 275);
             this.dgvMetodo.TabIndex = 29;
             // 
             // Desde
@@ -309,12 +304,12 @@
             // 
             this.lblTestKS.AutoSize = true;
             this.lblTestKS.Font = new System.Drawing.Font("Verdana", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTestKS.Location = new System.Drawing.Point(63, 16);
+            this.lblTestKS.Location = new System.Drawing.Point(41, 8);
             this.lblTestKS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTestKS.Name = "lblTestKS";
-            this.lblTestKS.Size = new System.Drawing.Size(845, 52);
+            this.lblTestKS.Size = new System.Drawing.Size(502, 104);
             this.lblTestKS.TabIndex = 42;
-            this.lblTestKS.Text = "Generador de Numeros Aleatorios";
+            this.lblTestKS.Text = "Generador de\r\nNumeros Aleatorios";
             // 
             // chartRnd
             // 
@@ -322,30 +317,32 @@
             this.chartRnd.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRnd.Legends.Add(legend1);
-            this.chartRnd.Location = new System.Drawing.Point(49, 379);
+            this.chartRnd.Location = new System.Drawing.Point(50, 397);
             this.chartRnd.Margin = new System.Windows.Forms.Padding(4);
             this.chartRnd.Name = "chartRnd";
             this.chartRnd.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            this.chartRnd.Size = new System.Drawing.Size(473, 394);
+            this.chartRnd.Size = new System.Drawing.Size(473, 371);
             this.chartRnd.TabIndex = 43;
             this.chartRnd.Text = "chart1";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(49, 159);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(51, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 70);
+            this.panel1.Size = new System.Drawing.Size(429, 34);
             this.panel1.TabIndex = 44;
             // 
             // rbMixto
             // 
             this.rbMixto.AutoSize = true;
             this.rbMixto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMixto.Location = new System.Drawing.Point(22, 38);
+            this.rbMixto.ForeColor = System.Drawing.Color.White;
+            this.rbMixto.Location = new System.Drawing.Point(283, 5);
             this.rbMixto.Margin = new System.Windows.Forms.Padding(4);
             this.rbMixto.Name = "rbMixto";
             this.rbMixto.Size = new System.Drawing.Size(83, 24);
@@ -358,7 +355,8 @@
             // 
             this.rbMultiplicativo.AutoSize = true;
             this.rbMultiplicativo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMultiplicativo.Location = new System.Drawing.Point(22, 6);
+            this.rbMultiplicativo.ForeColor = System.Drawing.Color.White;
+            this.rbMultiplicativo.Location = new System.Drawing.Point(74, 5);
             this.rbMultiplicativo.Margin = new System.Windows.Forms.Padding(4);
             this.rbMultiplicativo.Name = "rbMultiplicativo";
             this.rbMultiplicativo.Size = new System.Drawing.Size(160, 24);
@@ -369,47 +367,71 @@
             // 
             // btnUnValor
             // 
+            this.btnUnValor.BackColor = System.Drawing.Color.Black;
+            this.btnUnValor.Enabled = false;
             this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnValor.Location = new System.Drawing.Point(49, 243);
+            this.btnUnValor.ForeColor = System.Drawing.Color.White;
+            this.btnUnValor.Location = new System.Drawing.Point(50, 281);
             this.btnUnValor.Name = "btnUnValor";
             this.btnUnValor.Size = new System.Drawing.Size(430, 31);
             this.btnUnValor.TabIndex = 47;
             this.btnUnValor.Text = "Agregar un valor a la serie";
-            this.btnUnValor.UseVisualStyleBackColor = true;
+            this.btnUnValor.UseVisualStyleBackColor = false;
+            this.btnUnValor.Click += new System.EventHandler(this.btnUnValor_Click);
             // 
             // btnMil
             // 
+            this.btnMil.BackColor = System.Drawing.Color.Black;
+            this.btnMil.Enabled = false;
             this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMil.Location = new System.Drawing.Point(49, 341);
+            this.btnMil.ForeColor = System.Drawing.Color.White;
+            this.btnMil.Location = new System.Drawing.Point(50, 364);
             this.btnMil.Name = "btnMil";
             this.btnMil.Size = new System.Drawing.Size(430, 31);
             this.btnMil.TabIndex = 48;
             this.btnMil.Text = "Simular hasta mil valores";
-            this.btnMil.UseVisualStyleBackColor = true;
+            this.btnMil.UseVisualStyleBackColor = false;
+            this.btnMil.Click += new System.EventHandler(this.btnMil_Click);
             // 
             // btnVeinte
             // 
+            this.btnVeinte.BackColor = System.Drawing.Color.Black;
+            this.btnVeinte.Enabled = false;
             this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeinte.Location = new System.Drawing.Point(49, 292);
+            this.btnVeinte.ForeColor = System.Drawing.Color.White;
+            this.btnVeinte.Location = new System.Drawing.Point(50, 321);
             this.btnVeinte.Name = "btnVeinte";
             this.btnVeinte.Size = new System.Drawing.Size(430, 31);
             this.btnVeinte.TabIndex = 49;
             this.btnVeinte.Text = "Agregar veinte valores";
-            this.btnVeinte.UseVisualStyleBackColor = true;
+            this.btnVeinte.UseVisualStyleBackColor = false;
+            this.btnVeinte.Click += new System.EventHandler(this.btnVeinte_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dgvTabla);
+            this.panel2.Controls.Add(this.dgvMetodo);
+            this.panel2.Controls.Add(this.btnLimpiar);
+            this.panel2.Location = new System.Drawing.Point(577, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(508, 774);
+            this.panel2.TabIndex = 50;
             // 
             // GeneradorAleatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1029, 798);
+            this.ClientSize = new System.Drawing.Size(1097, 795);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVeinte);
             this.Controls.Add(this.btnMil);
             this.Controls.Add(this.btnUnValor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chartRnd);
             this.Controls.Add(this.lblTestKS);
-            this.Controls.Add(this.dgvMetodo);
             this.Controls.Add(this.txtG);
             this.Controls.Add(this.lblG);
             this.Controls.Add(this.lblK);
@@ -420,10 +442,7 @@
             this.Controls.Add(this.lblC);
             this.Controls.Add(this.txtA);
             this.Controls.Add(this.lblA);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.lblMetodo);
             this.Controls.Add(this.txtRaiz);
             this.Controls.Add(this.lblRaiz);
@@ -438,6 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartRnd)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +471,6 @@
         private System.Windows.Forms.DataGridView dgvTabla;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblA;
         private System.Windows.Forms.TextBox txtA;
         private System.Windows.Forms.Label lblC;
@@ -476,6 +495,7 @@
         private System.Windows.Forms.Button btnUnValor;
         private System.Windows.Forms.Button btnMil;
         private System.Windows.Forms.Button btnVeinte;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
