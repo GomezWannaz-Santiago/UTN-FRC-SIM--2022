@@ -721,7 +721,7 @@ namespace TP1_SIM
             {
                 if (i == 0)
                 {
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i]);
+                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
                 }
                 else
                 {
@@ -736,7 +736,14 @@ namespace TP1_SIM
             chartRnd.Series[0].IsValueShownAsLabel = true;
             for (int j = 0; j < intervalos.Length; j++)
             {
-                serie_resultante.Points.AddXY(intervalos[j], frecuencias[j]);
+                if (j == 0)
+                {
+                    serie_resultante.Points.AddXY(intervalos[j], frecuencias[j] - 1);
+                }
+                else
+                {
+                    serie_resultante.Points.AddXY(intervalos[j], frecuencias[j]); ;
+                }
             }
         }
 
