@@ -542,13 +542,7 @@ namespace TP1_SIM
                             frecuencias[j]++;
                         }
                     }
-
-
                 }
-
-                
-
-
             }
 
             for (int i = 0; i < intervalos.Length; i++)
