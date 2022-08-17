@@ -252,25 +252,6 @@ namespace TP1_SIM
                 }
                 else
                 {
-                    if (txtK.Text != "" && txtA.Text != "")
-                    {
-                        a = int.Parse(txtA.Text);
-                        k = int.Parse(txtK.Text);
-                    }
-                    else if (txtK.Text == "")
-                    {
-                        a = int.Parse(txtA.Text);
-
-                    }
-                    else if (txtA.Text == "")
-                    {
-                        k = int.Parse(txtK.Text);
-                        a = 3 + 8 * k;
-
-                        txtA.Text = a.ToString();
-                    }
-
-
                     if (txtM.Text != "" && txtG.Text != "")
                     {
                         g = int.Parse(txtG.Text);
@@ -321,7 +302,7 @@ namespace TP1_SIM
                 g = 0;
 
 
-                if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
+                if ((txtM.Text == "" && txtG.Text == ""))
                 {
                     controlarVariables();
                     return null;
@@ -740,7 +721,7 @@ namespace TP1_SIM
             {
                 if (i == 0)
                 {
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
+                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i]);
                 }
                 else
                 {

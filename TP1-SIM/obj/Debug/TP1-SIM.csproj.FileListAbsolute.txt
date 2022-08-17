@@ -247,3 +247,28 @@ C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\T
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe
 C:\Users\Marina Constanza\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.pdb
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.config
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe.manifest
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.application
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.exe
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\TP1-SIM.pdb
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.dll
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.dll
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.pdb
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.Core.xml
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.pdb
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\bin\Debug\AWSSDK.S3.xml
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.AssemblyReference.cache
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.SuggestedBindingRedirects.cache
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.GeneradorAleatorios.resources
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestKS.resources
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Menu.resources
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.Properties.Resources.resources
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1_SIM.TestChiCuadrado.resources
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.GenerateResource.cache
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CoreCompileInputs.cache
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe.manifest
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.application
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.csproj.CopyComplete
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.exe
+C:\Users\Telecentrovidal\Documents\GitHub\UTN-FRC-SIM--2022\TP1-SIM\obj\Debug\TP1-SIM.pdb

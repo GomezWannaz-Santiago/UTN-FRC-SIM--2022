@@ -75,7 +75,7 @@
             // 
             this.lblRaiz.AutoSize = true;
             this.lblRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaiz.Location = new System.Drawing.Point(45, 92);
+            this.lblRaiz.Location = new System.Drawing.Point(45, 80);
             this.lblRaiz.Name = "lblRaiz";
             this.lblRaiz.Size = new System.Drawing.Size(35, 16);
             this.lblRaiz.TabIndex = 0;
@@ -84,7 +84,7 @@
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(85, 90);
+            this.txtRaiz.Location = new System.Drawing.Point(85, 78);
             this.txtRaiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(39, 23);
@@ -95,7 +95,7 @@
             // 
             this.lblMetodo.AutoSize = true;
             this.lblMetodo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMetodo.Location = new System.Drawing.Point(45, 136);
+            this.lblMetodo.Location = new System.Drawing.Point(45, 119);
             this.lblMetodo.Name = "lblMetodo";
             this.lblMetodo.Size = new System.Drawing.Size(191, 17);
             this.lblMetodo.TabIndex = 4;
@@ -107,10 +107,10 @@
             this.dgvTabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ite,
             this.rnd});
-            this.dgvTabla.Location = new System.Drawing.Point(586, 90);
+            this.dgvTabla.Location = new System.Drawing.Point(586, 78);
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.RowHeadersWidth = 51;
-            this.dgvTabla.Size = new System.Drawing.Size(374, 308);
+            this.dgvTabla.Size = new System.Drawing.Size(374, 274);
             this.dgvTabla.TabIndex = 6;
             // 
             // ite
@@ -142,7 +142,7 @@
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.Location = new System.Drawing.Point(368, 222);
+            this.btnGenerar.Location = new System.Drawing.Point(368, 205);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(111, 30);
             this.btnGenerar.TabIndex = 7;
@@ -153,7 +153,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(791, 779);
+            this.btnLimpiar.Location = new System.Drawing.Point(799, 711);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
             this.btnLimpiar.TabIndex = 8;
@@ -164,7 +164,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(893, 779);
+            this.btnSalir.Location = new System.Drawing.Point(896, 711);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(94, 29);
             this.btnSalir.TabIndex = 9;
@@ -176,7 +176,7 @@
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(126, 92);
+            this.lblA.Location = new System.Drawing.Point(126, 80);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(21, 16);
             this.lblA.TabIndex = 10;
@@ -185,7 +185,7 @@
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(154, 90);
+            this.txtA.Location = new System.Drawing.Point(154, 78);
             this.txtA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(39, 23);
@@ -196,7 +196,7 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.Location = new System.Drawing.Point(196, 91);
+            this.lblC.Location = new System.Drawing.Point(196, 79);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(20, 16);
             this.lblC.TabIndex = 12;
@@ -205,7 +205,7 @@
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(222, 90);
+            this.txtC.Location = new System.Drawing.Point(222, 78);
             this.txtC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(39, 23);
@@ -215,7 +215,7 @@
             // txtM
             // 
             this.txtM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtM.Location = new System.Drawing.Point(298, 90);
+            this.txtM.Location = new System.Drawing.Point(298, 78);
             this.txtM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(39, 23);
@@ -226,7 +226,7 @@
             // 
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(264, 92);
+            this.lblM.Location = new System.Drawing.Point(264, 80);
             this.lblM.Name = "lblM";
             this.lblM.Size = new System.Drawing.Size(26, 16);
             this.lblM.TabIndex = 15;
@@ -235,7 +235,7 @@
             // txtK
             // 
             this.txtK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtK.Location = new System.Drawing.Point(368, 90);
+            this.txtK.Location = new System.Drawing.Point(368, 78);
             this.txtK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtK.Name = "txtK";
             this.txtK.Size = new System.Drawing.Size(39, 23);
@@ -246,7 +246,7 @@
             // 
             this.lblK.AutoSize = true;
             this.lblK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblK.Location = new System.Drawing.Point(340, 92);
+            this.lblK.Location = new System.Drawing.Point(340, 80);
             this.lblK.Name = "lblK";
             this.lblK.Size = new System.Drawing.Size(20, 16);
             this.lblK.TabIndex = 17;
@@ -256,7 +256,7 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(410, 92);
+            this.lblG.Location = new System.Drawing.Point(410, 80);
             this.lblG.Name = "lblG";
             this.lblG.Size = new System.Drawing.Size(21, 16);
             this.lblG.TabIndex = 18;
@@ -265,7 +265,7 @@
             // txtG
             // 
             this.txtG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtG.Location = new System.Drawing.Point(440, 90);
+            this.txtG.Location = new System.Drawing.Point(440, 78);
             this.txtG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtG.Name = "txtG";
             this.txtG.Size = new System.Drawing.Size(39, 23);
@@ -279,10 +279,10 @@
             this.Desde,
             this.Hasta,
             this.FrecAbs});
-            this.dgvMetodo.Location = new System.Drawing.Point(557, 422);
+            this.dgvMetodo.Location = new System.Drawing.Point(560, 358);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
-            this.dgvMetodo.Size = new System.Drawing.Size(430, 351);
+            this.dgvMetodo.Size = new System.Drawing.Size(430, 340);
             this.dgvMetodo.TabIndex = 29;
             // 
             // Desde
@@ -323,11 +323,11 @@
             this.chartRnd.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartRnd.Legends.Add(legend1);
-            this.chartRnd.Location = new System.Drawing.Point(48, 413);
+            this.chartRnd.Location = new System.Drawing.Point(49, 385);
             this.chartRnd.Margin = new System.Windows.Forms.Padding(4);
             this.chartRnd.Name = "chartRnd";
             this.chartRnd.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            this.chartRnd.Size = new System.Drawing.Size(473, 394);
+            this.chartRnd.Size = new System.Drawing.Size(473, 348);
             this.chartRnd.TabIndex = 43;
             this.chartRnd.Text = "chart1";
             // 
@@ -338,7 +338,7 @@
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(49, 159);
+            this.panel1.Location = new System.Drawing.Point(49, 142);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 93);
             this.panel1.TabIndex = 44;
@@ -386,7 +386,7 @@
             // 
             this.btnUnValor.Enabled = false;
             this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnValor.Location = new System.Drawing.Point(49, 271);
+            this.btnUnValor.Location = new System.Drawing.Point(49, 255);
             this.btnUnValor.Name = "btnUnValor";
             this.btnUnValor.Size = new System.Drawing.Size(430, 31);
             this.btnUnValor.TabIndex = 47;
@@ -397,7 +397,7 @@
             // 
             this.btnMil.Enabled = false;
             this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMil.Location = new System.Drawing.Point(49, 369);
+            this.btnMil.Location = new System.Drawing.Point(49, 347);
             this.btnMil.Name = "btnMil";
             this.btnMil.Size = new System.Drawing.Size(430, 31);
             this.btnMil.TabIndex = 48;
@@ -408,7 +408,7 @@
             // 
             this.btnVeinte.Enabled = false;
             this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeinte.Location = new System.Drawing.Point(49, 320);
+            this.btnVeinte.Location = new System.Drawing.Point(49, 301);
             this.btnVeinte.Name = "btnVeinte";
             this.btnVeinte.Size = new System.Drawing.Size(430, 31);
             this.btnVeinte.TabIndex = 49;
@@ -420,7 +420,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1029, 820);
+            this.ClientSize = new System.Drawing.Size(1029, 749);
             this.Controls.Add(this.btnVeinte);
             this.Controls.Add(this.btnMil);
             this.Controls.Add(this.btnUnValor);
