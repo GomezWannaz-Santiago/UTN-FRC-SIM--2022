@@ -694,11 +694,11 @@ namespace TP1_SIM
             {
                 if (i == 0)
                 {
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
+                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1 / numeros.Length - 1 );
                 }
                 else
                 {
-                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i]);
+                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i] / numeros.Length -1);
                 }
             }
             //Esta ultima sección de la función, grafica la tabla de frecuencia
@@ -765,6 +765,7 @@ namespace TP1_SIM
                 proximo = true;
                 controlarVariables();
                 double[] elem = validarMetodo();
+                CargarFrecuencia(elem, generarIntervalos(10));
             }
             catch(Exception ex)
             {
