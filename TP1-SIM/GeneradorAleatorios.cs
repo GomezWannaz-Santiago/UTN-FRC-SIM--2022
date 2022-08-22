@@ -19,7 +19,7 @@ namespace TP1_SIM
         private bool proximo20 = false;
         private bool final = false;
         private bool generarDH = false;
-        private bool primeraVuelta = false;
+        private bool primeraVuelta = true;
         public GeneradorAleatorios()
         {
             InitializeComponent();
@@ -61,13 +61,6 @@ namespace TP1_SIM
                 }
             }
 
-            // AL SER SOLO 20 VALORES AHORA YA ESTÁ DE MÁS LA VALIDACIÓN (mari)
-            //if (txt_valores.Text == "")
-            //{
-            //    MessageBox.Show("DEBE COMPLETAR EL CAMPO CANTIDAD DE VALORES A GENERAR");
-            //    return;
-
-            //}
             if (txtK.Text == "" && txtA.Text == "")
             {
                 Exception error = new Exception(message: "DEBE COMPLETAR EL CAMPO DE LOS VALORES A O K OBLIGATORIAMENTE");
@@ -114,11 +107,7 @@ namespace TP1_SIM
                     Exception error = new Exception(message: "Error el modulo \"m\" debe ser entero y mayor a cero");
                     throw error;
                 }
-
-
             }
-
-            //esto de las banderas podría borrarse porque ya no lo usamos (mari)
             if (bandOk == false)
             {
                 bandOk = true;
@@ -188,16 +177,7 @@ namespace TP1_SIM
                     }
                 }
             }
-
-            List<int> elementos = new List<int>();
-            elementos.Add(x);
-            elementos.Add(a);
-            elementos.Add(c);
-            elementos.Add(m);
-            elementos.Add(k);
-            elementos.Add(g);
-
-            return elementos;
+            return new List<int>() { x, a, c, m, k, g };
         }
 
 
@@ -283,11 +263,10 @@ namespace TP1_SIM
                             double rnd = Convert.ToDouble(dgvTabla.Rows[registros - 2].Cells[1].Value);
                             x = int.Parse((rnd * (m)).ToString());
                         }
-                        List<int> elementos = new List<int>() { x, a, c, m, k, g };
 
-                        return elementos;
                     }                    
-                }                                                                
+                }
+                return new List<int>() { x, a, c, m, k, g };
             }
             return null;
         }
@@ -297,96 +276,72 @@ namespace TP1_SIM
         private List<int> generarMultiplicativo()
         {
 
-            int x = 37;
+
+            int x = int.Parse(txtRaiz.Text);
+
             int c = 0;
-            int a = 19;
-            int m = 53;
+            int a = 0;
+            int m = 0;
             int k = 0;
             int g = 0;
-
-            if (txtRaiz.Text != "" && txtA.Text != "" && txtM.Text != "")
+            if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
             {
-                x = int.Parse(txtRaiz.Text);
-
-                c = 0;
-                a = 0;
-                m = 0;
-                k = 0;
-                g = 0;
-
-
-                if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
+                controlarVariables();
+                return null;
+            }
+            else
+            {
+                if (txtK.Text != "" && txtA.Text != "")
                 {
-                    controlarVariables();
-                    return null;
+                    a = int.Parse(txtA.Text);
+                    k = int.Parse(txtK.Text);
+                }
+                else if (txtK.Text == "")
+                {
+                    a = int.Parse(txtA.Text);
+
+                }
+                else if (txtA.Text == "")
+                {
+                    k = int.Parse(txtK.Text);
+                    a = 3 + 8 * k;
+
+                    txtA.Text = a.ToString();
+                }
+
+
+                if (txtM.Text != "" && txtG.Text != "")
+                {
+                    g = int.Parse(txtG.Text);
+                    m = int.Parse(txtM.Text);
+                }
+                else if (txtG.Text == "")
+                {
+                    m = int.Parse(txtM.Text);
+                }
+
+                else if (txtM.Text == "")
+                {
+                    g = int.Parse(txtG.Text);
+                    m = (int)Math.Pow(2, g);
+                    txtM.Text = m.ToString();
+                }
+
+                if (primeraVuelta == true)
+                {
+                    x = int.Parse(txtRaiz.Text);
+
                 }
                 else
                 {
-                    if (txtK.Text != "" && txtA.Text != "")
-                    {
-                        a = int.Parse(txtA.Text);
-                        k = int.Parse(txtK.Text);
-                    }
-                    else if (txtK.Text == "")
-                    {
-                        a = int.Parse(txtA.Text);
+                    int col = 1;
 
-                    }
-                    else if (txtA.Text == "")
-                    {
-                        k = int.Parse(txtK.Text);
-                        a = 3 + 8 * k;
-
-                        txtA.Text = a.ToString();
-                    }
-
-
-                    if (txtM.Text != "" && txtG.Text != "")
-                    {
-                        g = int.Parse(txtG.Text);
-                        m = int.Parse(txtM.Text);
-                    }
-                    else if (txtG.Text == "")
-                    {
-                        m = int.Parse(txtM.Text);
-                    }
-
-                    else if (txtM.Text == "")
-                    {
-                        g = int.Parse(txtG.Text);
-                        m = (int)Math.Pow(2, g);
-                        txtM.Text = m.ToString();
-                    }
-
-                    if (primeraVuelta == true)
-                    {
-                        x = int.Parse(txtRaiz.Text);
-
-                    }
-                    else
-                    {
-                        int col = 1;
-
-                        int registros = dgvTabla.RowCount;
-                        double rnd = Convert.ToDouble(dgvTabla.Rows[registros - 2].Cells[col].Value);
-                        x = int.Parse((rnd * (m)).ToString());
-                    }
-
-
-
-                    List<int> elementos = new List<int>();
-                    elementos.Add(x);
-                    elementos.Add(a);
-                    elementos.Add(c);
-                    elementos.Add(m);
-                    elementos.Add(k);
-                    elementos.Add(g);
-
-                    return elementos;
+                    int registros = dgvTabla.RowCount;
+                    double rnd = Convert.ToDouble(dgvTabla.Rows[registros - 2].Cells[col].Value);
+                    x = int.Parse((rnd * (m)).ToString());
                 }
-
             }
-            return null;
+            return new List<int>() { x, a, c, m, k, g };             
         }        
 
         private double[] validarMetodo()
@@ -460,11 +415,23 @@ namespace TP1_SIM
         {
             dgvTabla.Rows.Clear();
             dgvMetodo.Rows.Clear();
-            //controlarVariables();
             chartRnd.Series.Clear();
             double[] elem;
             try
             {
+                if (string.IsNullOrEmpty(txtRaiz.Text) && string.IsNullOrEmpty(txtC.Text) && string.IsNullOrEmpty(txtA.Text) && string.IsNullOrEmpty(txtM.Text))
+                {
+                    MessageBox.Show("Se usarán los valores por defecto");
+                    txtRaiz.Text = "37";
+                    txtC.Text = "7";
+                    txtA.Text = "19";
+                    txtM.Text = "53";
+                }
+                else
+                {
+                    controlarVariables();
+                }
+
                 elem = validarMetodo();
                 int num = 10;
                 double[] intervalos = generarIntervalos(num);
@@ -498,39 +465,31 @@ namespace TP1_SIM
             //sé que no es lo más prolijo, cuando esté más despierta lo cambio jaja
             int Sumindice = dgvTabla.Rows.Count - 1;
 
-            try
+            if (proximo)
             {
-                if (proximo)
-                {
-                    vueltas = 1;
-                    proximo = false;
-                }
-
-                if (proximo20)
-                {
-                    vueltas = 20;
-                    proximo20 = false;
-                }
-
-                if (final)
-                {
-                    //razonar bien si va ese +1 o me lo inventé
-                    vueltas = 1000 - dgvTabla.Rows.Count + 1;
-                    final = false;
-                }
+                vueltas = 1;
+                proximo = false;
             }
-            catch (Exception xx)
+
+            if (proximo20)
             {
-
-                MessageBox.Show("Error: " + xx);
-                throw;
+                vueltas = 20;
+                proximo20 = false;
             }
+
+            if (final)
+            {
+                //razonar bien si va ese +1 o me lo inventé
+                vueltas = 10000 - dgvTabla.Rows.Count + 1;
+                final = false;
+            }
+            
 
             double[] numeros = new double[vueltas + 1];
 
             // ver esto del generador DH
 
-            if (vueltas <= 1000 && generarDH == false)
+            if (vueltas <= 10000 && generarDH == false)
             {
                 for (int i = 1; i <= vueltas; i++)
                 {
@@ -549,14 +508,12 @@ namespace TP1_SIM
                         rnd = resto / m;
 
                     }
-                    // no entendí lo del vector numeros
                     dgvTabla.Rows.Add((i + Sumindice), rnd);
                     numeros[i] = rnd;
 
                 }
 
-            }
-            // else if??
+            }            
             else if (generarDH == true)
             {
                 for (int i = inicio; i <= vueltas; i++)
@@ -585,8 +542,7 @@ namespace TP1_SIM
             }
             else
             {
-                Exception error = new Exception(message: "No se pueden generar mas numeros");
-                throw error;
+                throw new Exception(message: "No se pueden generar mas numeros");
             }
 
             return numeros;
@@ -607,39 +563,26 @@ namespace TP1_SIM
             double axc;
             double resto = 0;
             double rnd;
-            // int vueltas = Convert.ToInt32(txt_valores.Text);
-            // Acá agregue lo de los 20 valores a generar y borré la selección del usuario (mari)
             int vueltas = 20;
             int inicio = 0;
 
-            try
+            vueltas = dgvTabla.Rows.Count;
+            
+            if (proximo)                                           
+                proximo = false;
+            
+            if (proximo20)
             {
-                if (proximo == true)
-                {
-                    vueltas = dgvTabla.Rows.Count;
-                    dgvTabla.Rows.Clear();
-                    proximo = false;
-                }
-
-                if (proximo20 == true)
-                {
-                    vueltas = dgvTabla.Rows.Count + 19;
-                    dgvTabla.Rows.Clear();
-                    proximo20 = false;
-                }
-
-                if (final == true)
-                {
-                    vueltas = 50000;
-                    dgvTabla.Rows.Clear();
-                    final = false;
-                }
+                vueltas += 19;                
+                proximo20 = false;
             }
-            catch (Exception xx)
+
+            if (final)
             {
-                MessageBox.Show("Error: " + xx);
-                throw;
+                vueltas = 50000;
+                final = false;
             }
+            dgvTabla.Rows.Clear();
 
             double[] numeros = new double[vueltas + 1];
 
@@ -692,8 +635,7 @@ namespace TP1_SIM
             }
             else
             {
-                Exception error = new Exception(message: "No se pueden generar mas numeros");
-                throw error;
+                throw new Exception(message: "No se pueden generar mas numeros");
             }
             return numeros;
         }
@@ -731,11 +673,8 @@ namespace TP1_SIM
         {
             int[] frecuencias = new int[intervalos.Length];
 
-
-
             for (int i = 0; i < numeros.Length; i++)
             {
-
                 for (int j = 0; j < intervalos.Length; j++)
                 {
                     if (j == 0)
@@ -753,8 +692,6 @@ namespace TP1_SIM
 
             for (int i = 0; i < intervalos.Length; i++)
             {
-
-
                 if (i == 0)
                 {
                     dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1);
@@ -763,8 +700,6 @@ namespace TP1_SIM
                 {
                     dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i]);
                 }
-
-
             }
             //Esta ultima sección de la función, grafica la tabla de frecuencia
             chartRnd.ChartAreas[0].AxisY.Minimum = 0;
@@ -786,7 +721,6 @@ namespace TP1_SIM
         }
         public double[] generarIntervalos(int num)
         {
-
             double[] intervalos = new double[num];
             float tam = 1 / (float)num;
 
@@ -800,7 +734,6 @@ namespace TP1_SIM
                 {
                     intervalos[i] = Math.Round(intervalos[i - 1] + tam, 4);
                 }
-                Console.WriteLine(intervalos[i]);
             }
 
             return intervalos;
@@ -826,25 +759,46 @@ namespace TP1_SIM
 
         private void btnUnValor_Click(object sender, EventArgs e)
         {
-            proximo = true;
-            controlarVariables();
-            double[] elem = validarMetodo();
-            primeraVuelta = false;
+            try
+            {
+                primeraVuelta = false;
+                proximo = true;
+                controlarVariables();
+                double[] elem = validarMetodo();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnVeinte_Click(object sender, EventArgs e)
         {
-            proximo20 = true;
-            controlarVariables();
-            double[] elem = validarMetodo();
+            try
+            {
+                proximo20 = true;
+                controlarVariables();
+                double[] elem = validarMetodo();
+            }            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnMil_Click(object sender, EventArgs e)
         {
-            final = true;
-            controlarVariables();
-            double[] elem = validarMetodo();
-
+            try
+            {
+                final = true;
+                controlarVariables();
+                double[] elem = validarMetodo();
+            }            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
