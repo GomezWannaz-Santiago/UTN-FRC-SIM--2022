@@ -20,6 +20,8 @@ namespace TP1_SIM
         private bool final = false;
         private bool generarDH = false;
         private bool primeraVuelta = true;
+        double[] elem;
+
         public GeneradorAleatorios()
         {
             InitializeComponent();
@@ -330,7 +332,6 @@ namespace TP1_SIM
                 if (primeraVuelta == true)
                 {
                     x = int.Parse(txtRaiz.Text);
-
                 }
                 else
                 {
@@ -398,7 +399,7 @@ namespace TP1_SIM
                     var elementos = generarAditivo();
                     if (elementos != null)
                     {
-                        numeros = cargarTablaAditivo(elementos);
+                        numeros = cargarTabla(elementos);
                     }
                 }
 
@@ -416,7 +417,7 @@ namespace TP1_SIM
             dgvTabla.Rows.Clear();
             dgvMetodo.Rows.Clear();
             chartRnd.Series.Clear();
-            double[] elem;
+
             try
             {
                 if (string.IsNullOrEmpty(txtRaiz.Text) && string.IsNullOrEmpty(txtC.Text) && string.IsNullOrEmpty(txtA.Text) && string.IsNullOrEmpty(txtM.Text))
@@ -441,6 +442,16 @@ namespace TP1_SIM
                 btnVeinte.Enabled = true;
                 btnMil.Enabled = true;
                 primeraVuelta = true;
+                rbAditivo.Enabled = false;
+                rbMixto.Enabled = false;
+                rbMultiplicativo.Enabled = false;
+                txtA.Enabled = false;
+                txtC.Enabled = false;
+                txtG.Enabled = false;
+                txtK.Enabled = false;
+                txtM.Enabled = false;
+                txtRaiz.Enabled = false;
+                btnGenerar.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -458,6 +469,7 @@ namespace TP1_SIM
             int k = elements[4];
             int g = elements[5];
 
+            double xAnterior = 0;
             double axc;
             double resto = 0;
             double rnd;
@@ -493,21 +505,42 @@ namespace TP1_SIM
             {
                 for (int i = 1; i <= vueltas; i++)
                 {
-                    if (i == 1)
+                    if(rbMixto.Checked || rbMultiplicativo.Checked)
                     {
+                        if (i == 1)
+                        {
 
-                        axc = a * x + c;
-                        resto = axc % m;
-                        rnd = resto / m;
+                            axc = a * x + c;
+                            resto = axc % m;
+                            rnd = resto / m;
 
+                        }
+                        else
+                        {
+                            axc = a * resto + c;
+                            resto = axc % m;
+                            rnd = resto / m;
+
+                        }
                     }
                     else
                     {
-                        axc = a * resto + c;
-                        resto = axc % m;
-                        rnd = resto / m;
-
+                        if (i == 1)
+                        {
+                            axc = x;
+                            resto = axc % m;
+                            rnd = resto / m;
+                            xAnterior = x;
+                        }
+                        else
+                        {
+                            xAnterior = resto;
+                            axc = resto + xAnterior;
+                            resto = axc % m;
+                            rnd = resto / m;
+                        }
                     }
+
                     dgvTabla.Rows.Add((i + Sumindice), rnd);
                     numeros[i] = rnd;
 
@@ -518,19 +551,41 @@ namespace TP1_SIM
             {
                 for (int i = inicio; i <= vueltas; i++)
                 {
-                    if (i == inicio)
+                    if (rbMixto.Checked || rbMultiplicativo.Checked)
                     {
+                        if (i == inicio)
+                        {
 
-                        axc = a * x + c;
-                        resto = axc % m;
-                        rnd = resto / m;
+                            axc = a * x + c;
+                            resto = axc % m;
+                            rnd = resto / m;
+
+                        }
+                        else
+                        {
+                            axc = a * resto + c;
+                            resto = axc % m;
+                            rnd = resto / m;
+
+                        }
 
                     }
                     else
                     {
-                        axc = a * resto + c;
-                        resto = axc % m;
-                        rnd = resto / m;
+                        if (i == inicio)
+                        {
+                            axc = x;
+                            resto = axc % m;
+                            rnd = resto / m;
+                            xAnterior = x;
+                        }
+                        else
+                        {
+                            xAnterior = resto;
+                            axc = resto + xAnterior;
+                            resto = axc % m;
+                            rnd = resto / m;
+                        }
 
                     }
 
@@ -549,100 +604,6 @@ namespace TP1_SIM
 
         }
 
-
-        private double[] cargarTablaAditivo(List<int> elements)
-        {
-            int x = elements[0];
-            int a = elements[1];
-            int c = elements[2];
-            int m = elements[3];
-            int k = elements[4];
-            int g = elements[5];
-
-            double xAnterior = 0;
-            double axc;
-            double resto = 0;
-            double rnd;
-            int vueltas = 20;
-            int inicio = 0;
-
-            vueltas = dgvTabla.Rows.Count;
-            
-            if (proximo)                                           
-                proximo = false;
-            
-            if (proximo20)
-            {
-                vueltas += 19;                
-                proximo20 = false;
-            }
-
-            if (final)
-            {
-                vueltas = 50000;
-                final = false;
-            }
-            dgvTabla.Rows.Clear();
-
-            double[] numeros = new double[vueltas + 1];
-
-            if (vueltas <= 50000 && generarDH == false)
-            {
-                for (int i = 1; i <= vueltas; i++)
-                {
-                    if (i == 1)
-                    {
-                        axc = x;
-                        resto = axc % m;
-                        rnd = resto / m;
-                        xAnterior = x;
-                    }
-                    else
-                    {
-                        xAnterior = resto;
-                        axc = resto + xAnterior;
-                        resto = axc % m;
-                        rnd = resto / m;
-                    }
-
-                    dgvTabla.Rows.Add(i, rnd);
-                    numeros[i] = rnd;
-                }
-            }
-            else if (generarDH == true)
-            {
-                for (int i = inicio; i <= vueltas; i++)
-                {
-                    if (i == 1)
-                    {
-                        axc = x;
-                        resto = axc % m;
-                        rnd = resto / m;
-                        xAnterior = x;
-                    }
-                    else
-                    {
-                        xAnterior = resto;
-                        axc = resto + xAnterior;
-                        resto = axc % m;
-                        rnd = resto / m;
-                    }
-
-                    dgvTabla.Rows.Add(i, rnd);
-                    numeros[i] = rnd;
-                }
-                generarDH = false;
-            }
-            else
-            {
-                throw new Exception(message: "No se pueden generar mas numeros");
-            }
-            return numeros;
-        }
-
-
-
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -650,6 +611,7 @@ namespace TP1_SIM
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            primeraVuelta = true;
             txtRaiz.Clear();
             txtA.Clear();
             txtC.Clear();
@@ -664,9 +626,17 @@ namespace TP1_SIM
             btnUnValor.Enabled = false;
             btnVeinte.Enabled = false;
             btnMil.Enabled = false;
-            primeraVuelta = false;
 
-
+            rbAditivo.Enabled = true;
+            rbMixto.Enabled = true;
+            rbMultiplicativo.Enabled = true;
+            txtA.Enabled = true;
+            txtC.Enabled = true;
+            txtG.Enabled = true;
+            txtK.Enabled = true;
+            txtM.Enabled = true;
+            txtRaiz.Enabled = true;
+            btnGenerar.Enabled = true;
         }
 
         private void CargarFrecuencia(double[] numeros, double[] intervalos)
@@ -694,15 +664,16 @@ namespace TP1_SIM
             {
                 if (i == 0)
                 {
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1 / numeros.Length - 1 );
+                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1, (double)(frecuencias[i] - 1)/ (double)(numeros.Length - 1));
                 }
                 else
                 {
-                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i] / numeros.Length -1);
+                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i], (double)(frecuencias[i]) / (double)(numeros.Length - 1));
                 }
             }
             //Esta ultima sección de la función, grafica la tabla de frecuencia
             chartRnd.ChartAreas[0].AxisY.Minimum = 0;
+            chartRnd.ChartAreas[0].AxisY.Maximum = numeros.Length/4;
             Series serie_resultante = chartRnd.Series.Add("RND");
             this.chartRnd.ChartAreas[0].AxisY.Title = "Fo";
             this.chartRnd.ChartAreas[0].AxisX.Title = "Intervalo";
@@ -764,7 +735,11 @@ namespace TP1_SIM
                 primeraVuelta = false;
                 proximo = true;
                 controlarVariables();
-                double[] elem = validarMetodo();
+                dgvMetodo.Rows.Clear();
+                chartRnd.Series.Clear();
+
+                elem = elem.Concat(validarMetodo()).ToArray();
+                
                 CargarFrecuencia(elem, generarIntervalos(10));
             }
             catch(Exception ex)
@@ -780,7 +755,12 @@ namespace TP1_SIM
             {
                 proximo20 = true;
                 controlarVariables();
-                double[] elem = validarMetodo();
+                dgvMetodo.Rows.Clear();
+                chartRnd.Series.Clear();
+               
+                elem = elem.Concat(validarMetodo()).ToArray();
+
+                CargarFrecuencia(elem, generarIntervalos(10));
             }            
             catch (Exception ex)
             {
@@ -794,7 +774,12 @@ namespace TP1_SIM
             {
                 final = true;
                 controlarVariables();
-                double[] elem = validarMetodo();
+                dgvMetodo.Rows.Clear();
+                chartRnd.Series.Clear();
+                
+                elem = elem.Concat(validarMetodo()).ToArray();
+
+                CargarFrecuencia(elem, generarIntervalos(10));
             }            
             catch (Exception ex)
             {
