@@ -703,11 +703,11 @@ namespace TP1_SIM
                 primeraVuelta = false;
                 proximo = true;
 
-                controlarVariables();
+                ControlarVariables();
                 dgvMetodo.Rows.Clear();
                 chartRnd.Series.Clear();
 
-                elem = elem.Concat(validarMetodo()).ToArray();
+                elem = elem.Concat(ValidarMetodo()).ToArray();
                 CargarFrecuencia(elem, generarIntervalos(10));
             }
             catch(Exception ex)
@@ -722,11 +722,11 @@ namespace TP1_SIM
             try
             {
                 proximo20 = true;
-                controlarVariables();
+                ControlarVariables();
                 dgvMetodo.Rows.Clear();
                 chartRnd.Series.Clear();
                
-                elem = elem.Concat(validarMetodo()).ToArray();
+                elem = elem.Concat(ValidarMetodo()).ToArray();
 
             }            
             catch (Exception ex)
@@ -740,11 +740,11 @@ namespace TP1_SIM
             try
             {
                 final = true;
-                controlarVariables();
+                ControlarVariables();
                 dgvMetodo.Rows.Clear();
                 chartRnd.Series.Clear();
                 
-                elem = elem.Concat(validarMetodo()).ToArray();
+                elem = elem.Concat(ValidarMetodo()).ToArray();
 
                 CargarFrecuencia(elem, generarIntervalos(10));
             }            
