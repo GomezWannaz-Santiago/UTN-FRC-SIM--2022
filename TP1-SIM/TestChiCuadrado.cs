@@ -74,7 +74,7 @@ namespace TP1_SIM
                 }
                 int cantidadIntervalos = int.Parse(cmbIntervalos.SelectedItem.ToString());
                 double[] intervalos = GenerarIntervalos(cantidadIntervalos);
-                CargarFrecuencias(elem, intervalos);
+                CargarFrecuenciasMejorado(elem, intervalos);
 
                 ////
                 int nroFila = dgvFrecuencias.RowCount;
@@ -142,63 +142,47 @@ namespace TP1_SIM
             }
             return intervalos;           
         }
-       
-        private void CargarFrecuencias(double[] numeros , double[] intervalos)
+
+        private void CargarFrecuenciasMejorado(double[] numeros, double[] intervalos)
         {
-            int[] frecuencias = new int[intervalos.Length];
+            double c;            
+            double amplitud = intervalos[1] - intervalos[0];
+            double frecEsperada = numeros.Length / intervalos.Length;
+
+            // Crear intervalos propiamente dichos
+            var frecuencias = new List<PruebaChiCuadrado>();
+            foreach (var intervalo in intervalos)
+            {
+                frecuencias.Add(new PruebaChiCuadrado() { LimSup = Math.Round(intervalo,5), LimInf = Math.Round(intervalo - amplitud,5), FrecEsp = Math.Round(frecEsperada, 4) });
+            }
             
-            double suma = 0;
-            double frecEsperada =  numeros.Length / intervalos.Length;
-         
+            // Contar frecuencias
             for (int i = 0; i < numeros.Length; i++)
             {
-                suma += numeros[i];
+                var filaGrilla = frecuencias.FirstOrDefault(x => numeros[i] >= x.LimInf && numeros[i] < x.LimSup);
+                if (filaGrilla == null)
+                    filaGrilla = frecuencias.Where(x => numeros[i] >= x.LimInf ).Max();
 
-                for (int j = 0; j < intervalos.Length; j++)
-                {
-                    if (j == 0)
-                    {
-                        if (numeros[i] < intervalos[j])
-                        {
-                            frecuencias[j]++;
-
-                        }
-                    }
-                    else
-                    {
-                        if (intervalos[j - 1] < numeros[i] && numeros[i] < intervalos[j])
-                        {
-                            frecuencias[j]++;                         
-                        }
-                    }
-                }
+                filaGrilla.FrecObs++;                
             }
-            double sumaC = 0;
-            for (int i = 0; i < intervalos.Length; i++)
-            {
 
-                double c = Math.Round(Math.Pow(frecuencias[i] - frecEsperada, 2) / frecEsperada, 4);
-                sumaC += c;
-                if (i == 0)
-                {   
-                    dgvFrecuencias.Rows.Add(0, intervalos[i], frecuencias[i], Math.Round(frecEsperada, 4),c,sumaC);
-                }
-                else
-                {                                        
-                    dgvFrecuencias.Rows.Add(intervalos[i - 1], intervalos[i],frecuencias[i], Math.Round(frecEsperada, 4),c,sumaC);
-                }
-            }    
-            
-            
             chart1.ChartAreas[0].AxisY.Minimum = 0;
-            Series serie_observada = chart1.Series.Add("Valores");            
+            Series serie_observada = chart1.Series.Add("Valores");
             this.chart1.ChartAreas[0].AxisY.Title = "Fo";
             this.chart1.ChartAreas[0].AxisX.Title = "Intervalo";
             chart1.Series[0].IsValueShownAsLabel = true;
-            for (int i = 0; i < intervalos.Length; i++)
+
+            // Calcular C y cAcumulado, armar grafico
+            double cAcum = 0;
+            foreach(var fila in frecuencias.OrderBy(x => x.LimInf))
             {
-                serie_observada.Points.AddXY(intervalos[i], frecuencias[i]);
-            }     
+                c = Math.Pow(fila.FrecObs - frecEsperada, 2) / frecEsperada;
+                fila.c = c;
+                cAcum += fila.c;
+                dgvFrecuencias.Rows.Add(fila.LimInf, fila.LimSup, fila.FrecObs, Math.Round(fila.FrecEsp), Math.Round(fila.c,4), Math.Round(cAcum,4) );
+                serie_observada.Points.AddXY(fila.LimSup, fila.FrecObs);
+            }
+
         }
 
         private string ValidarHipotesis(string valorCalculado, int cantidadIntervalos)
