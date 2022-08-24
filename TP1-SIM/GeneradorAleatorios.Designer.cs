@@ -52,19 +52,20 @@
             this.lblG = new System.Windows.Forms.Label();
             this.txtG = new System.Windows.Forms.TextBox();
             this.dgvMetodo = new System.Windows.Forms.DataGridView();
-            this.Desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FrecAbs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTestKS = new System.Windows.Forms.Label();
             this.chartRnd = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbAditivo = new System.Windows.Forms.RadioButton();
             this.rbMixto = new System.Windows.Forms.RadioButton();
             this.rbMultiplicativo = new System.Windows.Forms.RadioButton();
             this.btnUnValor = new System.Windows.Forms.Button();
             this.btnMil = new System.Windows.Forms.Button();
             this.btnVeinte = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rbAditivo = new System.Windows.Forms.RadioButton();
+            this.Desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FrecAbs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FrecuenciaRelativa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMetodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRnd)).BeginInit();
@@ -76,16 +77,16 @@
             // 
             this.lblRaiz.AutoSize = true;
             this.lblRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRaiz.Location = new System.Drawing.Point(47, 200);
+            this.lblRaiz.Location = new System.Drawing.Point(61, 202);
             this.lblRaiz.Name = "lblRaiz";
-            this.lblRaiz.Size = new System.Drawing.Size(36, 16);
+            this.lblRaiz.Size = new System.Drawing.Size(35, 16);
             this.lblRaiz.TabIndex = 0;
             this.lblRaiz.Text = "X0: ";
             // 
             // txtRaiz
             // 
             this.txtRaiz.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRaiz.Location = new System.Drawing.Point(87, 198);
+            this.txtRaiz.Location = new System.Drawing.Point(101, 200);
             this.txtRaiz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRaiz.Name = "txtRaiz";
             this.txtRaiz.Size = new System.Drawing.Size(39, 23);
@@ -146,7 +147,7 @@
             this.btnGenerar.BackColor = System.Drawing.Color.Black;
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(52, 244);
+            this.btnGenerar.Location = new System.Drawing.Point(66, 246);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(429, 31);
             this.btnGenerar.TabIndex = 7;
@@ -170,16 +171,16 @@
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(128, 200);
+            this.lblA.Location = new System.Drawing.Point(142, 202);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(22, 16);
+            this.lblA.Size = new System.Drawing.Size(21, 16);
             this.lblA.TabIndex = 10;
             this.lblA.Text = "a:";
             // 
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(156, 198);
+            this.txtA.Location = new System.Drawing.Point(170, 200);
             this.txtA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(39, 23);
@@ -190,16 +191,16 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.Location = new System.Drawing.Point(198, 199);
+            this.lblC.Location = new System.Drawing.Point(212, 201);
             this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(21, 16);
+            this.lblC.Size = new System.Drawing.Size(20, 16);
             this.lblC.TabIndex = 12;
             this.lblC.Text = "c:";
             // 
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(224, 198);
+            this.txtC.Location = new System.Drawing.Point(238, 200);
             this.txtC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(39, 23);
@@ -209,7 +210,7 @@
             // txtM
             // 
             this.txtM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtM.Location = new System.Drawing.Point(300, 198);
+            this.txtM.Location = new System.Drawing.Point(314, 200);
             this.txtM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtM.Name = "txtM";
             this.txtM.Size = new System.Drawing.Size(39, 23);
@@ -220,16 +221,16 @@
             // 
             this.lblM.AutoSize = true;
             this.lblM.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblM.Location = new System.Drawing.Point(266, 200);
+            this.lblM.Location = new System.Drawing.Point(280, 202);
             this.lblM.Name = "lblM";
-            this.lblM.Size = new System.Drawing.Size(27, 16);
+            this.lblM.Size = new System.Drawing.Size(26, 16);
             this.lblM.TabIndex = 15;
             this.lblM.Text = "m:";
             // 
             // txtK
             // 
             this.txtK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtK.Location = new System.Drawing.Point(370, 198);
+            this.txtK.Location = new System.Drawing.Point(384, 200);
             this.txtK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtK.Name = "txtK";
             this.txtK.Size = new System.Drawing.Size(39, 23);
@@ -240,9 +241,9 @@
             // 
             this.lblK.AutoSize = true;
             this.lblK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblK.Location = new System.Drawing.Point(342, 200);
+            this.lblK.Location = new System.Drawing.Point(356, 202);
             this.lblK.Name = "lblK";
-            this.lblK.Size = new System.Drawing.Size(21, 16);
+            this.lblK.Size = new System.Drawing.Size(20, 16);
             this.lblK.TabIndex = 17;
             this.lblK.Text = "k:";
             // 
@@ -250,16 +251,16 @@
             // 
             this.lblG.AutoSize = true;
             this.lblG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblG.Location = new System.Drawing.Point(412, 200);
+            this.lblG.Location = new System.Drawing.Point(426, 202);
             this.lblG.Name = "lblG";
-            this.lblG.Size = new System.Drawing.Size(22, 16);
+            this.lblG.Size = new System.Drawing.Size(21, 16);
             this.lblG.TabIndex = 18;
             this.lblG.Text = "g:";
             // 
             // txtG
             // 
             this.txtG.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtG.Location = new System.Drawing.Point(442, 198);
+            this.txtG.Location = new System.Drawing.Point(456, 200);
             this.txtG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtG.Name = "txtG";
             this.txtG.Size = new System.Drawing.Size(39, 23);
@@ -273,33 +274,13 @@
             this.dgvMetodo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Desde,
             this.Hasta,
-            this.FrecAbs});
+            this.FrecAbs,
+            this.FrecuenciaRelativa});
             this.dgvMetodo.Location = new System.Drawing.Point(39, 438);
             this.dgvMetodo.Name = "dgvMetodo";
             this.dgvMetodo.RowHeadersWidth = 51;
-            this.dgvMetodo.Size = new System.Drawing.Size(431, 275);
+            this.dgvMetodo.Size = new System.Drawing.Size(528, 275);
             this.dgvMetodo.TabIndex = 29;
-            // 
-            // Desde
-            // 
-            this.Desde.HeaderText = "Desde";
-            this.Desde.MinimumWidth = 6;
-            this.Desde.Name = "Desde";
-            this.Desde.Width = 125;
-            // 
-            // Hasta
-            // 
-            this.Hasta.HeaderText = "Hasta";
-            this.Hasta.MinimumWidth = 6;
-            this.Hasta.Name = "Hasta";
-            this.Hasta.Width = 125;
-            // 
-            // FrecAbs
-            // 
-            this.FrecAbs.HeaderText = "Frecuencia Absoluta";
-            this.FrecAbs.MinimumWidth = 6;
-            this.FrecAbs.Name = "FrecAbs";
-            this.FrecAbs.Width = 125;
             // 
             // lblTestKS
             // 
@@ -328,16 +309,30 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.rbAditivo);
             this.panel1.Controls.Add(this.rbMixto);
             this.panel1.Controls.Add(this.rbMultiplicativo);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(51, 142);
+            this.panel1.Location = new System.Drawing.Point(65, 144);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(429, 34);
             this.panel1.TabIndex = 44;
+            // 
+            // rbAditivo
+            // 
+            this.rbAditivo.AutoSize = true;
+            this.rbAditivo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAditivo.ForeColor = System.Drawing.Color.White;
+            this.rbAditivo.Location = new System.Drawing.Point(271, 8);
+            this.rbAditivo.Margin = new System.Windows.Forms.Padding(4);
+            this.rbAditivo.Name = "rbAditivo";
+            this.rbAditivo.Size = new System.Drawing.Size(76, 20);
+            this.rbAditivo.TabIndex = 47;
+            this.rbAditivo.TabStop = true;
+            this.rbAditivo.Text = "Aditivo";
+            this.rbAditivo.UseVisualStyleBackColor = true;
             // 
             // rbMixto
             // 
@@ -347,7 +342,7 @@
             this.rbMixto.Location = new System.Drawing.Point(172, 8);
             this.rbMixto.Margin = new System.Windows.Forms.Padding(4);
             this.rbMixto.Name = "rbMixto";
-            this.rbMixto.Size = new System.Drawing.Size(66, 20);
+            this.rbMixto.Size = new System.Drawing.Size(65, 20);
             this.rbMixto.TabIndex = 46;
             this.rbMixto.TabStop = true;
             this.rbMixto.Text = "Mixto";
@@ -361,7 +356,7 @@
             this.rbMultiplicativo.Location = new System.Drawing.Point(20, 8);
             this.rbMultiplicativo.Margin = new System.Windows.Forms.Padding(4);
             this.rbMultiplicativo.Name = "rbMultiplicativo";
-            this.rbMultiplicativo.Size = new System.Drawing.Size(123, 20);
+            this.rbMultiplicativo.Size = new System.Drawing.Size(122, 20);
             this.rbMultiplicativo.TabIndex = 45;
             this.rbMultiplicativo.TabStop = true;
             this.rbMultiplicativo.Text = "Multiplicativo";
@@ -373,7 +368,7 @@
             this.btnUnValor.Enabled = false;
             this.btnUnValor.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnValor.ForeColor = System.Drawing.Color.White;
-            this.btnUnValor.Location = new System.Drawing.Point(50, 281);
+            this.btnUnValor.Location = new System.Drawing.Point(64, 283);
             this.btnUnValor.Name = "btnUnValor";
             this.btnUnValor.Size = new System.Drawing.Size(430, 31);
             this.btnUnValor.TabIndex = 47;
@@ -387,11 +382,11 @@
             this.btnMil.Enabled = false;
             this.btnMil.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMil.ForeColor = System.Drawing.Color.White;
-            this.btnMil.Location = new System.Drawing.Point(50, 364);
+            this.btnMil.Location = new System.Drawing.Point(64, 366);
             this.btnMil.Name = "btnMil";
             this.btnMil.Size = new System.Drawing.Size(430, 31);
             this.btnMil.TabIndex = 48;
-            this.btnMil.Text = "Simular hasta mil valores";
+            this.btnMil.Text = "Simular hasta diez mil valores";
             this.btnMil.UseVisualStyleBackColor = false;
             this.btnMil.Click += new System.EventHandler(this.btnMil_Click);
             // 
@@ -401,7 +396,7 @@
             this.btnVeinte.Enabled = false;
             this.btnVeinte.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVeinte.ForeColor = System.Drawing.Color.White;
-            this.btnVeinte.Location = new System.Drawing.Point(50, 321);
+            this.btnVeinte.Location = new System.Drawing.Point(64, 323);
             this.btnVeinte.Name = "btnVeinte";
             this.btnVeinte.Size = new System.Drawing.Size(430, 31);
             this.btnVeinte.TabIndex = 49;
@@ -418,29 +413,43 @@
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Location = new System.Drawing.Point(577, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(508, 774);
+            this.panel2.Size = new System.Drawing.Size(610, 774);
             this.panel2.TabIndex = 50;
             // 
-            // rbAditivo
+            // Desde
             // 
-            this.rbAditivo.AutoSize = true;
-            this.rbAditivo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAditivo.ForeColor = System.Drawing.Color.White;
-            this.rbAditivo.Location = new System.Drawing.Point(271, 8);
-            this.rbAditivo.Margin = new System.Windows.Forms.Padding(4);
-            this.rbAditivo.Name = "rbAditivo";
-            this.rbAditivo.Size = new System.Drawing.Size(77, 20);
-            this.rbAditivo.TabIndex = 47;
-            this.rbAditivo.TabStop = true;
-            this.rbAditivo.Text = "Aditivo";
-            this.rbAditivo.UseVisualStyleBackColor = true;
+            this.Desde.HeaderText = "Desde";
+            this.Desde.MinimumWidth = 6;
+            this.Desde.Name = "Desde";
+            this.Desde.Width = 125;
+            // 
+            // Hasta
+            // 
+            this.Hasta.HeaderText = "Hasta";
+            this.Hasta.MinimumWidth = 6;
+            this.Hasta.Name = "Hasta";
+            this.Hasta.Width = 125;
+            // 
+            // FrecAbs
+            // 
+            this.FrecAbs.HeaderText = "Frecuencia Absoluta";
+            this.FrecAbs.MinimumWidth = 6;
+            this.FrecAbs.Name = "FrecAbs";
+            this.FrecAbs.Width = 125;
+            // 
+            // FrecuenciaRelativa
+            // 
+            this.FrecuenciaRelativa.HeaderText = "Frecuencia Relativa";
+            this.FrecuenciaRelativa.MinimumWidth = 6;
+            this.FrecuenciaRelativa.Name = "FrecuenciaRelativa";
+            this.FrecuenciaRelativa.Width = 125;
             // 
             // GeneradorAleatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1097, 795);
+            this.ClientSize = new System.Drawing.Size(1197, 795);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnVeinte);
             this.Controls.Add(this.btnMil);
@@ -505,14 +514,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rbMixto;
         private System.Windows.Forms.RadioButton rbMultiplicativo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Desde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FrecAbs;
         private System.Windows.Forms.Button btnUnValor;
         private System.Windows.Forms.Button btnMil;
         private System.Windows.Forms.Button btnVeinte;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rbAditivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Desde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FrecAbs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FrecuenciaRelativa;
     }
 }
 
