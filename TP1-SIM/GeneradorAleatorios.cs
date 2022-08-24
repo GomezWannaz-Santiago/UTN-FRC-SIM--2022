@@ -463,17 +463,17 @@ namespace TP1_SIM
             }
 
 
-            double[] numeros = new double[vueltas + 1];
+            double[] numeros = new double[vueltas];
 
             // ver esto del generador DH
 
             if (vueltas <= 10000 && generarDH == false)
             {
-                for (int i = 1; i <= vueltas; i++)
+                for (int i = 0; i < vueltas; i++)
                 {
                     if(rbMixto.Checked || rbMultiplicativo.Checked)
                     {
-                        if (i == 1)
+                        if (i == 0)
                         {
 
                             axc = a * x + c;
@@ -508,7 +508,7 @@ namespace TP1_SIM
                         }
                     }
 
-                    dgvTabla.Rows.Add((i + Sumindice), rnd);
+                    dgvTabla.Rows.Add((i + Sumindice + 1), rnd);
                     numeros[i] = rnd;
 
                 }
@@ -632,11 +632,11 @@ namespace TP1_SIM
                 if (i == 0)
                 {
 
-                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1, (double)(frecuencias[i] - 1)/ (double)(numeros.Length - 1));
+                    dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i], (double)(frecuencias[i])/ (double)(numeros.Length));
                 }
                 else
                 {
-                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i], (double)(frecuencias[i]) / (double)(numeros.Length - 1));
+                    dgvMetodo.Rows.Add(intervalos[i - 1], intervalos[i], frecuencias[i], (double)(frecuencias[i]) / (double)(numeros.Length));
                 }
             }
             //Esta ultima sección de la función, grafica la tabla de frecuencia
@@ -650,7 +650,7 @@ namespace TP1_SIM
             {
                 if (j == 0)
                 {
-                    serie_resultante.Points.AddXY(intervalos[j], frecuencias[j] - 1);
+                    serie_resultante.Points.AddXY(intervalos[j], frecuencias[j]);
                 }
                 else
                 {
@@ -728,6 +728,8 @@ namespace TP1_SIM
                
                 elem = elem.Concat(ValidarMetodo()).ToArray();
 
+                CargarFrecuencia(elem, generarIntervalos(10));
+
             }            
             catch (Exception ex)
             {
@@ -743,7 +745,7 @@ namespace TP1_SIM
                 ControlarVariables();
                 dgvMetodo.Rows.Clear();
                 chartRnd.Series.Clear();
-                
+
                 elem = elem.Concat(ValidarMetodo()).ToArray();
 
                 CargarFrecuencia(elem, generarIntervalos(10));
