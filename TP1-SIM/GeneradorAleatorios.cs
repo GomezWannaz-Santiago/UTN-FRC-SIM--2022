@@ -26,14 +26,12 @@ namespace TP1_SIM
         {
             InitializeComponent();
         }
-        // Verificamos que lo ingresado en el txt sea un numero
-        //creo que lo de validar que sea número ya no hacia falta por una funcion que habia puesto yo para que no acepte letras (KeyPress) (mari)
-        private int validarVariables(string variable)
+                
+        private int ValidarVariables(string variable)
         {
+            // Verifica que se haya ingresado un número positivo 
             if (int.TryParse(variable, out int resultado))
-            {
-
-                //verificamos que el numero es positivo
+            {                
                 if (resultado > 0)
                 {
                     return resultado;
@@ -44,80 +42,57 @@ namespace TP1_SIM
         }
 
 
-        private void controlarVariables()
+        private void ControlarVariables()
         {
-
-
-            if (validarVariables(txtRaiz.Text) == -1)
+            // Valida que se hayan ingresado los parámetros necesarios
+            if (ValidarVariables(txtRaiz.Text) == -1)
             {
-                Exception error = new Exception(message: "Error la Raiz \"X0\" debe ser entero y mayor a cero");
-                throw error;
+                throw new Exception(message: "Error la Raiz \"X0\" debe ser entero y mayor a cero");
             }
             else if (rbMixto.Checked)
             {
-                if (validarVariables(txtC.Text) == -1)
-                {
-                    Exception error = new Exception(message: "Error la constante \"c\" debe ser entero y mayor a cero");
-                    throw error;
-
-                }
+                if (ValidarVariables(txtC.Text) == -1)                
+                    throw new Exception(message: "Error la constante \"c\" debe ser entero y mayor a cero");                
             }
 
             if (txtK.Text == "" && txtA.Text == "")
             {
-                Exception error = new Exception(message: "DEBE COMPLETAR EL CAMPO DE LOS VALORES A O K OBLIGATORIAMENTE");
-                throw error;
-
+                throw new Exception(message: "DEBE COMPLETAR EL CAMPO DE LOS VALORES A O K OBLIGATORIAMENTE");
             }
             else if (txtK.Text == "")
             {
-                if (validarVariables(txtA.Text) == -1)
-                {
-                    Exception error = new Exception(message: "Error la constante \"a\" debe ser entero y mayor a cero");
-                    throw error;
-                }
+                if (ValidarVariables(txtA.Text) == -1)                
+                    throw new Exception(message: "Error la constante \"a\" debe ser entero y mayor a cero");                    
+                
             }
             else if (txtA.Text == "")
             {
-                if (validarVariables(txtK.Text) == -1)
-                {
-                    Exception error = new Exception(message: "Error el numero \"k\" debe ser entero y mayor a cero");
-                    throw error;
-                }
-
+                if (ValidarVariables(txtK.Text) == -1)               
+                    throw new Exception(message: "Error el numero \"k\" debe ser entero y mayor a cero");                                    
             }
 
             if (txtM.Text == "" && txtG.Text == "")
             {
-                Exception error = new Exception(message: "DEBE COMPLETAR EL CAMPO DE LOS VALORES M O G OBLIGATORIAMENTE");
-                throw error;
-
+                throw new Exception(message: "DEBE COMPLETAR EL CAMPO DE LOS VALORES M O G OBLIGATORIAMENTE");                
             }
             else if (txtM.Text == "")
             {
-                if (validarVariables(txtG.Text) == -1)
-                {
-                    Exception error = new Exception(message: "Error el numero \"g\" debe ser entero y mayor a cero");
-                    throw error;
-                }
-
+                if (ValidarVariables(txtG.Text) == -1)                
+                    throw new Exception(message: "Error el numero \"g\" debe ser entero y mayor a cero");                                    
             }
             else if (txtG.Text == "")
             {
-                if (validarVariables(txtM.Text) == -1)
-                {
-                    Exception error = new Exception(message: "Error el modulo \"m\" debe ser entero y mayor a cero");
-                    throw error;
-                }
+                if (ValidarVariables(txtM.Text) == -1)                
+                    throw new Exception(message: "Error el modulo \"m\" debe ser entero y mayor a cero");                                    
             }
-            if (bandOk == false)
-            {
-                bandOk = true;
-            }
+            if (!bandOk)            
+                bandOk = true;            
         }
 
-        private List<int> generarAditivo()
+        private List<int> GenerarAditivo()
         {
+            // Retorna una lista con los parámetros necesarios para el aditivo
+
             int x = 37;
             int c = 0;
             int a = 0;
@@ -135,10 +110,9 @@ namespace TP1_SIM
                 k = 0;
                 g = 0;
 
-
                 if ((txtM.Text == "" && txtG.Text == ""))
                 {
-                    controlarVariables();
+                    ControlarVariables();
                     return null;
                 }
                 else
@@ -182,9 +156,6 @@ namespace TP1_SIM
             return new List<int>() { x, a, c, m, k, g };
         }
 
-
-        // VER SI BORRAR ESTO
-
         private List<int> generarMixto()
         {
             if (rbMixto.Checked)
@@ -209,7 +180,7 @@ namespace TP1_SIM
 
                     if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
                     {
-                        controlarVariables();
+                        ControlarVariables();
                         return null;
                     }
                     else
@@ -227,12 +198,9 @@ namespace TP1_SIM
                         else if (txtA.Text == "")
                         {
                             k = int.Parse(txtK.Text);
-                            a = 1 + 4 * k;
-                            //
+                            a = 1 + 4 * k;                            
                             txtA.Text = a.ToString();
-
                         }
-
 
                         if (txtM.Text != "" && txtG.Text != "")
                         {
@@ -288,7 +256,7 @@ namespace TP1_SIM
             int g = 0;
             if ((txtK.Text == "" && txtA.Text == "") || (txtM.Text == "" && txtG.Text == ""))
             {
-                controlarVariables();
+                ControlarVariables();
                 return null;
             }
             else
@@ -345,10 +313,8 @@ namespace TP1_SIM
             return new List<int>() { x, a, c, m, k, g };             
         }        
 
-        private double[] validarMetodo()
+        private double[] ValidarMetodo()
         {
-            //double[] numeros = new double[int.Parse(txt_valores.Text)];
-            // cambie por 20 igual ver si es necesario pasarlo a double  (mari)
             double[] numeros = new double[20];
             if (bandOk == true)
             {
@@ -396,7 +362,7 @@ namespace TP1_SIM
 
                 else if (rbAditivo.Checked)
                 {
-                    var elementos = generarAditivo();
+                    var elementos = GenerarAditivo();
                     if (elementos != null)
                     {
                         numeros = cargarTabla(elementos);
@@ -430,10 +396,10 @@ namespace TP1_SIM
                 }
                 else
                 {
-                    controlarVariables();
+                    ControlarVariables();
                 }
 
-                elem = validarMetodo();
+                elem = ValidarMetodo();
                 int num = 10;
                 double[] intervalos = generarIntervalos(num);
                 CargarFrecuencia(elem, intervalos);
@@ -495,7 +461,7 @@ namespace TP1_SIM
                 vueltas = 10000 - dgvTabla.Rows.Count + 1;
                 final = false;
             }
-            
+
 
             double[] numeros = new double[vueltas + 1];
 
@@ -513,6 +479,7 @@ namespace TP1_SIM
                             axc = a * x + c;
                             resto = axc % m;
                             rnd = resto / m;
+
 
                         }
                         else
@@ -546,7 +513,7 @@ namespace TP1_SIM
 
                 }
 
-            }            
+            }
             else if (generarDH == true)
             {
                 for (int i = inicio; i <= vueltas; i++)
@@ -664,6 +631,7 @@ namespace TP1_SIM
             {
                 if (i == 0)
                 {
+
                     dgvMetodo.Rows.Add(0, intervalos[i], frecuencias[i] - 1, (double)(frecuencias[i] - 1)/ (double)(numeros.Length - 1));
                 }
                 else
@@ -734,12 +702,12 @@ namespace TP1_SIM
             {
                 primeraVuelta = false;
                 proximo = true;
+
                 controlarVariables();
                 dgvMetodo.Rows.Clear();
                 chartRnd.Series.Clear();
 
                 elem = elem.Concat(validarMetodo()).ToArray();
-                
                 CargarFrecuencia(elem, generarIntervalos(10));
             }
             catch(Exception ex)
@@ -760,7 +728,6 @@ namespace TP1_SIM
                
                 elem = elem.Concat(validarMetodo()).ToArray();
 
-                CargarFrecuencia(elem, generarIntervalos(10));
             }            
             catch (Exception ex)
             {
